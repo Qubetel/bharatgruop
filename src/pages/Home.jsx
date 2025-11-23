@@ -371,7 +371,7 @@ const Home = () => {
                     backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                   }}
                   transition={{ duration: 5, repeat: Infinity }}
-                  className="bg-gradient-to-r from-green-200 via-white to-green-200 bg-clip-text text-transparent"
+                  className="bg-gradient-to-r from-orange-500 via-white to-green-600 bg-clip-text text-transparent"
                   style={{ backgroundSize: '200% auto' }}
                 >
                   Bharat Group
