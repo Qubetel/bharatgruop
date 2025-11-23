@@ -1,0 +1,378 @@
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { Mail, Phone, MapPin, Clock, Send, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import logoSign from '../assets/bharat-group/logo-sign.png';
+
+const AnimatedSection = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission
+    alert('Thank you for your inquiry! We will get back to you soon.');
+    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+  };
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: 'Our Location',
+      details: ['Manufacturing Unit', 'Industrial Area', 'India'],
+      color: 'text-red-600',
+      bg: 'bg-red-100',
+    },
+    {
+      icon: Phone,
+      title: 'Phone Numbers',
+      details: ['+91 1234567890', '+91 0987654321'],
+      color: 'text-green-600',
+      bg: 'bg-green-100',
+    },
+    {
+      icon: Mail,
+      title: 'Email Address',
+      details: ['info@bharatgroup.com', 'sales@bharatgroup.com'],
+      color: 'text-green-600',
+      bg: 'bg-green-100',
+    },
+    {
+      icon: Clock,
+      title: 'Business Hours',
+      details: ['Monday - Saturday', '9:00 AM - 6:00 PM'],
+      color: 'text-purple-600',
+      bg: 'bg-purple-100',
+    },
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-green-600">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        </div>
+
+        {/* Floating Logo Icons */}
+        <motion.div
+          animate={{ y: [-12, 12, -12], rotate: [0, 360] }}
+          transition={{ duration: 13, repeat: Infinity, ease: "linear" }}
+          className="absolute top-20 left-20 hidden lg:block"
+        >
+          <img src={logoSign} alt="Bharat Group" className="w-14 h-14 opacity-25" />
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [12, -12, 12], rotate: [360, 0] }}
+          transition={{ duration: 17, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-16 right-20 hidden lg:block"
+        >
+          <img src={logoSign} alt="Bharat Group" className="w-16 h-16 opacity-20" />
+        </motion.div>
+
+        <div className="container mx-auto px-4 z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center text-white"
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Get In Touch</h1>
+            <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
+              We're here to help you find the perfect machinery solution
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Info Cards */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {contactInfo.map((info, index) => (
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <div className={`inline-flex items-center justify-center w-14 h-14 ${info.bg} rounded-lg mb-4`}>
+                    <info.icon className={`w-7 h-7 ${info.color}`} />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">{info.title}</h3>
+                  {info.details.map((detail, idx) => (
+                    <p key={idx} className="text-gray-600 mb-1">
+                      {detail}
+                    </p>
+                  ))}
+                </motion.div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Map */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+            {/* Contact Form */}
+            <AnimatedSection>
+              <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-xl">
+                <h2 className="text-3xl font-bold text-gray-800 mb-2">Send Us a Message</h2>
+                <p className="text-gray-600 mb-8">
+                  Fill out the form below and we'll get back to you as soon as possible
+                </p>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-300 outline-none"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-300 outline-none"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-300 outline-none"
+                        placeholder="+91 1234567890"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Subject *
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-300 outline-none"
+                      placeholder="How can we help?"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Message *
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-300 outline-none resize-none"
+                      placeholder="Tell us about your requirements..."
+                    ></textarea>
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full flex items-center justify-center px-8 py-4 bg-green-600 text-white rounded-lg font-bold text-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    Send Message
+                    <Send className="ml-2 w-5 h-5" />
+                  </motion.button>
+                </form>
+              </div>
+            </AnimatedSection>
+
+            {/* Additional Info */}
+            <AnimatedSection delay={0.2}>
+              <div className="space-y-8">
+                {/* Map Placeholder */}
+                <div className="bg-gray-200 rounded-2xl h-64 overflow-hidden shadow-xl">
+                  <iframe
+                    title="Location Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.121890267796!2d73.8567437!3d18.5203303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0701f000001%3A0x1!2sPune%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1234567890"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                  ></iframe>
+                </div>
+
+                {/* Why Choose Us */}
+                <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-8 text-white shadow-xl">
+                  <h3 className="text-2xl font-bold mb-4">Why Choose Bharat Group?</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-green-300 rounded-full mt-2 mr-3"></div>
+                      <span>20+ years of industry experience</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-green-300 rounded-full mt-2 mr-3"></div>
+                      <span>100+ skilled professionals</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-green-300 rounded-full mt-2 mr-3"></div>
+                      <span>Wide distribution network</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-green-300 rounded-full mt-2 mr-3"></div>
+                      <span>Easy payment options</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-green-300 rounded-full mt-2 mr-3"></div>
+                      <span>Timely delivery guaranteed</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-green-300 rounded-full mt-2 mr-3"></div>
+                      <span>Excellent after-sales support</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Social Media */}
+                <div className="bg-white rounded-2xl p-8 shadow-xl">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Follow Us</h3>
+                  <p className="text-gray-600 mb-6">Stay connected on social media for updates and news</p>
+                  <div className="flex gap-4">
+                    <a
+                      href="#"
+                      className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-lg hover:bg-green-600 hover:text-white transition-all duration-300 text-green-600"
+                    >
+                      <Facebook className="w-6 h-6" />
+                    </a>
+                    <a
+                      href="#"
+                      className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-lg hover:bg-green-400 hover:text-white transition-all duration-300 text-green-400"
+                    >
+                      <Twitter className="w-6 h-6" />
+                    </a>
+                    <a
+                      href="#"
+                      className="flex items-center justify-center w-12 h-12 bg-pink-100 rounded-lg hover:bg-pink-600 hover:text-white transition-all duration-300 text-pink-600"
+                    >
+                      <Instagram className="w-6 h-6" />
+                    </a>
+                    <a
+                      href="#"
+                      className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-lg hover:bg-green-700 hover:text-white transition-all duration-300 text-green-700"
+                    >
+                      <Linkedin className="w-6 h-6" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <AnimatedSection>
+            <div className="text-center mb-12">
+              <h2 className="section-title">Frequently Asked Questions</h2>
+              <p className="section-subtitle">Quick answers to common questions</p>
+            </div>
+          </AnimatedSection>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                q: 'What is the warranty period for your machines?',
+                a: 'All our machines come with a 1-year warranty covering manufacturing defects and parts replacement.',
+              },
+              {
+                q: 'Do you provide installation and training?',
+                a: 'Yes, we provide free installation and comprehensive training to ensure smooth operation of the machinery.',
+              },
+              {
+                q: 'What are the payment options available?',
+                a: 'We offer flexible payment options including EMI, bank transfers, and various digital payment methods.',
+              },
+              {
+                q: 'How long does delivery take?',
+                a: 'Typically 7-15 business days depending on your location and machine availability.',
+              },
+            ].map((faq, index) => (
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+                >
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">{faq.q}</h3>
+                  <p className="text-gray-600">{faq.a}</p>
+                </motion.div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Contact;
