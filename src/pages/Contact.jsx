@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, Facebook, Twitter, Instagram, Linkedin, FileText } from 'lucide-react';
 import logoSign from '../assets/bharat-group/logo-sign.png';
 
 const AnimatedSection = ({ children, delay = 0 }) => {
@@ -44,14 +44,14 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Our Location',
-      details: ['Manufacturing Unit', 'Industrial Area', 'India'],
+      details: ['Office No.: 207, 2nd Floor', 'Wallfort Zone, Fafadih', 'RAIPUR - 492001 (C.G.)'],
       color: 'text-red-600',
       bg: 'bg-red-100',
     },
     {
       icon: Phone,
-      title: 'Phone Numbers',
-      details: ['+91 1234567890', '+91 0987654321'],
+      title: 'Phone Number',
+      details: ['0771-3169531'],
       color: 'text-green-600',
       bg: 'bg-green-100',
     },
@@ -59,8 +59,15 @@ const Contact = () => {
       icon: Mail,
       title: 'Email Address',
       details: ['info@bharatgroup.com', 'sales@bharatgroup.com'],
-      color: 'text-green-600',
-      bg: 'bg-green-100',
+      color: 'text-blue-600',
+      bg: 'bg-blue-100',
+    },
+    {
+      icon: FileText,
+      title: 'GSTIN',
+      details: ['22CYHPP7549G1Z4'],
+      color: 'text-orange-600',
+      bg: 'bg-orange-100',
     },
     {
       icon: Clock,
@@ -115,7 +122,7 @@ const Contact = () => {
       {/* Contact Info Cards */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {contactInfo.map((info, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
                 <motion.div
