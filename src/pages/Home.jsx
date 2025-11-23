@@ -411,7 +411,7 @@ const Home = () => {
                   <motion.button
                     whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }}
                     whileTap={{ scale: 0.95 }}
-                    className="group w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-green-600 rounded-lg font-bold text-base md:text-lg shadow-xl"
+                    className="group w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-green-700 text-white rounded-lg font-bold text-base md:text-lg shadow-xl hover:bg-green-800"
                   >
                     Explore Our Machines
                     <motion.div
@@ -554,7 +554,7 @@ const Home = () => {
                     >
                       <stat.icon className="w-8 h-8 text-green-600" />
                     </motion.div>
-                    <motion.h3
+                    <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
@@ -563,7 +563,7 @@ const Home = () => {
                       style={{ transform: 'translateZ(60px)' }}
                     >
                       {stat.value}
-                    </motion.h3>
+                    </motion.div>
                     <p className="text-gray-600" style={{ transform: 'translateZ(40px)' }}>{stat.label}</p>
                   </Card3D>
                 </motion.div>
@@ -829,7 +829,7 @@ const Home = () => {
                         className="w-16 h-16 rounded-full object-cover border-4 border-green-200 shadow-md"
                       />
                       <div>
-                        <h4 className="font-bold text-gray-800 text-lg">{testimonial.name}</h4>
+                        <p className="font-bold text-gray-800 text-lg">{testimonial.name}</p>
                         <p className="text-green-600 font-semibold text-sm">{testimonial.business}</p>
                         <p className="text-gray-500 text-sm">{testimonial.location}</p>
                       </div>

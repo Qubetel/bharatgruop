@@ -17,17 +17,17 @@ const Footer = () => {
               Leading manufacturer of eco-friendly machinery since 2005. Quality you can trust.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors p-2" aria-label="Follow us on Facebook">
+                <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors">
-                <Twitter className="w-5 h-5" />
+              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors p-2" aria-label="Follow us on Twitter">
+                <Twitter className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors p-2" aria-label="Follow us on Instagram">
+                <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors">
-                <Linkedin className="w-5 h-5" />
+              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors p-2" aria-label="Follow us on LinkedIn">
+                <Linkedin className="w-6 h-6" />
               </a>
             </div>
           </div>
@@ -77,12 +77,12 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-green-500 mt-1" />
                 <span className="text-gray-400">
-                  Manufacturing Unit, Industrial Area, India
+                  Office No. 207, 2nd Floor, Wallfort Zone, Fafadih, Raipur - 492001 (C.G.)
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-green-500" />
-                <span className="text-gray-400">+91 1234567890</span>
+                <span className="text-gray-400">0771-3169531</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-green-500" />
