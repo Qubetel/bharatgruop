@@ -22,7 +22,7 @@ const AnimatedSection = ({ children, delay = 0 }) => {
   );
 };
 
-const StackingSection = ({ children, index, className }) => {
+const StackingSection = ({ children, className }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -59,12 +59,12 @@ const StackingSection = ({ children, index, className }) => {
 };
 
 const Home = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(() => {
+    // Initialize with current window width
+    return typeof window !== 'undefined' ? window.innerWidth : 0;
+  });
 
   useEffect(() => {
-    // Set initial width
-    setWindowWidth(window.innerWidth);
-
     // Add resize listener
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -188,18 +188,6 @@ const Home = () => {
         duration: 6,
         repeat: Infinity,
         ease: "easeInOut"
-      }
-    }
-  };
-
-  const rotateVariants = {
-    initial: { rotate: 0 },
-    animate: {
-      rotate: 360,
-      transition: {
-        duration: 20,
-        repeat: Infinity,
-        ease: "linear"
       }
     }
   };
