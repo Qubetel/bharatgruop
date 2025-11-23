@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -22,6 +22,55 @@ const AnimatedSection = ({ children, delay = 0 }) => {
   );
 };
 
+// 3D Card Component with mouse tracking
+const Card3D = ({ children, className }) => {
+  const ref = useRef(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [7.5, -7.5]), {
+    stiffness: 300,
+    damping: 20
+  });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-7.5, 7.5]), {
+    stiffness: 300,
+    damping: 20
+  });
+
+  const handleMouseMove = (e) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    mouseX.set((e.clientX - centerX) / (rect.width / 2));
+    mouseY.set((e.clientY - centerY) / (rect.height / 2));
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: 'preserve-3d',
+        transformPerspective: 1000
+      }}
+      className={className}
+    >
+      <div style={{ transform: 'translateZ(50px)' }}>
+        {children}
+      </div>
+    </motion.div>
+  );
+};
+
 const StackingSection = ({ children, className }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -30,16 +79,22 @@ const StackingSection = ({ children, className }) => {
   });
 
   // More dramatic scale effect
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.75, 0.9, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [0.7, 0.85, 0.95, 1]);
 
   // Smooth opacity transition
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 1], [0, 0.5, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5, 1], [0, 0.3, 0.7, 1]);
 
   // Add vertical translation for sliding up effect
-  const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [150, 50, 0]);
 
-  // Slight rotation for more dynamic effect
-  const rotateX = useTransform(scrollYProgress, [0, 1], [10, 0]);
+  // Enhanced 3D rotation effect
+  const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [15, 5, 0]);
+
+  // Add subtle Y-axis rotation for depth
+  const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [-2, -1, 0]);
+
+  // Add Z-axis translation for depth
+  const z = useTransform(scrollYProgress, [0, 1], [-100, 0]);
 
   return (
     <motion.section
@@ -49,7 +104,10 @@ const StackingSection = ({ children, className }) => {
         opacity,
         y,
         rotateX,
-        transformPerspective: 1200
+        rotateY,
+        z,
+        transformStyle: 'preserve-3d',
+        transformPerspective: 1500
       }}
       className={className}
     >
@@ -63,6 +121,13 @@ const Home = () => {
     // Initialize with current window width
     return typeof window !== 'undefined' ? window.innerWidth : 0;
   });
+
+  // Parallax scroll tracking
+  const { scrollY } = useScroll();
+  const parallaxY1 = useTransform(scrollY, [0, 1000], [0, -200]);
+  const parallaxY2 = useTransform(scrollY, [0, 1000], [0, -150]);
+  const parallaxY3 = useTransform(scrollY, [0, 1000], [0, -100]);
+  const parallaxRotate = useTransform(scrollY, [0, 1000], [0, 180]);
 
   useEffect(() => {
     // Add resize listener
@@ -196,25 +261,36 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="scroll-section scroll-section-1 relative min-h-screen md:h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-green-600 py-20 md:py-0">
-        {/* Animated Background */}
+        {/* Animated Background with Parallax */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+          <motion.div
+            style={{ y: parallaxY1 }}
+            className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob"
+          ></motion.div>
+          <motion.div
+            style={{ y: parallaxY2 }}
+            className="absolute top-40 right-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"
+          ></motion.div>
+          <motion.div
+            style={{ y: parallaxY3 }}
+            className="absolute bottom-20 left-1/2 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"
+          ></motion.div>
         </div>
 
-        {/* Animated Floating Icons */}
+        {/* Animated Floating Icons with Parallax */}
         <motion.div
           variants={floatingVariants}
           initial="initial"
           animate="animate"
+          style={{ y: parallaxY1, rotate: parallaxRotate }}
           className="absolute top-32 left-20 hidden lg:block"
         >
           <motion.div
             animate={{ rotate: [0, 360] }}
             transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            style={{ transformStyle: 'preserve-3d' }}
           >
-            <img src={logoSign} alt="Bharat Group" className="w-16 h-16 opacity-30" />
+            <img src={logoSign} alt="Bharat Group" className="w-16 h-16 opacity-30" style={{ transform: 'translateZ(30px)' }} />
           </motion.div>
         </motion.div>
 
@@ -223,13 +299,15 @@ const Home = () => {
           initial="initial"
           animate="animate"
           transition={{ delay: 1 }}
+          style={{ y: parallaxY2 }}
           className="absolute top-64 right-32 hidden lg:block"
         >
           <motion.div
             animate={{ rotate: [360, 0] }}
             transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+            style={{ transformStyle: 'preserve-3d' }}
           >
-            <Zap className="w-12 h-12 text-yellow-300 opacity-40" />
+            <Zap className="w-12 h-12 text-yellow-300 opacity-40" style={{ transform: 'translateZ(40px)' }} />
           </motion.div>
         </motion.div>
 
@@ -238,13 +316,15 @@ const Home = () => {
           initial="initial"
           animate="animate"
           transition={{ delay: 2 }}
+          style={{ y: parallaxY3 }}
           className="absolute bottom-32 right-20 hidden lg:block"
         >
           <motion.div
             animate={{ rotate: [0, 360] }}
             transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            style={{ transformStyle: 'preserve-3d' }}
           >
-            <img src={logoSign} alt="Bharat Group" className="w-14 h-14 opacity-30" />
+            <img src={logoSign} alt="Bharat Group" className="w-14 h-14 opacity-30" style={{ transform: 'translateZ(50px)' }} />
           </motion.div>
         </motion.div>
 
@@ -253,13 +333,15 @@ const Home = () => {
           initial="initial"
           animate="animate"
           transition={{ delay: 0.5 }}
+          style={{ y: parallaxY2 }}
           className="absolute bottom-48 left-1/4 hidden lg:block"
         >
           <motion.div
             animate={{ rotate: [360, 0] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            style={{ transformStyle: 'preserve-3d' }}
           >
-            <img src={logoSign} alt="Bharat Group" className="w-12 h-12 opacity-20" />
+            <img src={logoSign} alt="Bharat Group" className="w-12 h-12 opacity-20" style={{ transform: 'translateZ(35px)' }} />
           </motion.div>
         </motion.div>
 
@@ -469,33 +551,35 @@ const Home = () => {
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center"
                 >
-                  <motion.div
-                    animate={{
-                      boxShadow: [
-                        "0 0 0 0 rgba(37, 99, 235, 0.4)",
-                        "0 0 0 20px rgba(37, 99, 235, 0)",
-                      ]
-                    }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4"
-                  >
-                    <stat.icon className="w-8 h-8 text-green-600" />
-                  </motion.div>
-                  <motion.h3
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                    viewport={{ once: true }}
-                    className="text-4xl font-bold text-gray-800 mb-2"
-                  >
-                    {stat.value}
-                  </motion.h3>
-                  <p className="text-gray-600">{stat.label}</p>
+                  <Card3D className="text-center bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <motion.div
+                      animate={{
+                        boxShadow: [
+                          "0 0 0 0 rgba(22, 163, 74, 0.4)",
+                          "0 0 0 20px rgba(22, 163, 74, 0)",
+                        ]
+                      }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4"
+                      style={{ transform: 'translateZ(75px)' }}
+                    >
+                      <stat.icon className="w-8 h-8 text-green-600" />
+                    </motion.div>
+                    <motion.h3
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                      viewport={{ once: true }}
+                      className="text-4xl font-bold text-gray-800 mb-2"
+                      style={{ transform: 'translateZ(60px)' }}
+                    >
+                      {stat.value}
+                    </motion.h3>
+                    <p className="text-gray-600" style={{ transform: 'translateZ(40px)' }}>{stat.label}</p>
+                  </Card3D>
                 </motion.div>
               ))}
             </div>
@@ -655,14 +739,10 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {features.map((feature, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{ scale: 1.05, rotate: [0, 2, -2, 0] }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20"
-                >
-                  <CheckCircle className="w-8 h-8 text-green-400 mb-3" />
-                  <h3 className="text-xl font-semibold">{feature}</h3>
-                </motion.div>
+                <Card3D className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-colors duration-300">
+                  <CheckCircle className="w-8 h-8 text-green-400 mb-3" style={{ transform: 'translateZ(60px)' }} />
+                  <h3 className="text-xl font-semibold" style={{ transform: 'translateZ(40px)' }}>{feature}</h3>
+                </Card3D>
               </AnimatedSection>
             ))}
           </div>
