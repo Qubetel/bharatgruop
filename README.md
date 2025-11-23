@@ -1,7 +1,7 @@
 # Bharat Group Website
 
 ![CI](https://github.com/vikashmahato23/bharat_group/actions/workflows/ci.yml/badge.svg)
-![Deploy](https://github.com/vikashmahato23/bharat_group/actions/workflows/deploy.yml/badge.svg)
+[![Deploy with Vercel](https://vercel.com/button)](https://bharat-group.vercel.app/)
 
 A modern, responsive website for Bharat Group - Your trusted partner in eco-friendly machinery manufacturing since 2005.
 
