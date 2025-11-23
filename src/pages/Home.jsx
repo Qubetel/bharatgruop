@@ -75,26 +75,17 @@ const StackingSection = ({ children, className }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "start start"]
+    offset: ["start end", "start center"]
   });
 
-  // More dramatic scale effect
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [0.7, 0.85, 0.95, 1]);
+  // Simple scale effect
+  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
 
-  // Smooth opacity transition
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5, 1], [0, 0.3, 0.7, 1]);
+  // Simple opacity transition
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.8, 1]);
 
-  // Add vertical translation for sliding up effect
-  const y = useTransform(scrollYProgress, [0, 0.5, 1], [150, 50, 0]);
-
-  // Enhanced 3D rotation effect
-  const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [15, 5, 0]);
-
-  // Add subtle Y-axis rotation for depth
-  const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [-2, -1, 0]);
-
-  // Add Z-axis translation for depth
-  const z = useTransform(scrollYProgress, [0, 1], [-100, 0]);
+  // Smooth vertical slide up
+  const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
 
   return (
     <motion.section
@@ -102,12 +93,7 @@ const StackingSection = ({ children, className }) => {
       style={{
         scale,
         opacity,
-        y,
-        rotateX,
-        rotateY,
-        z,
-        transformStyle: 'preserve-3d',
-        transformPerspective: 1500
+        y
       }}
       className={className}
     >

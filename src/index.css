@@ -386,8 +386,6 @@ section.bg-gradient-to-br.from-green-50 .slick-next:before {
 .scroll-section {
   position: relative;
   will-change: transform, opacity;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
 }
 
 .scroll-section-1 {
@@ -396,32 +394,32 @@ section.bg-gradient-to-br.from-green-50 .slick-next:before {
 
 .scroll-section-2 {
   z-index: 2;
-  margin-top: -60px;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+  margin-top: -40px;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-section-3 {
   z-index: 3;
-  margin-top: -60px;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+  margin-top: -40px;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-section-4 {
   z-index: 4;
-  margin-top: -60px;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+  margin-top: -40px;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-section-5 {
   z-index: 5;
-  margin-top: -60px;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+  margin-top: -40px;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-section-6 {
   z-index: 6;
-  margin-top: -60px;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+  margin-top: -40px;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile adjustments */
@@ -431,8 +429,8 @@ section.bg-gradient-to-br.from-green-50 .slick-next:before {
   .scroll-section-4,
   .scroll-section-5,
   .scroll-section-6 {
-    margin-top: -32px;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    margin-top: -20px;
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.08);
   }
 
   /* Add padding for bottom nav on mobile */
