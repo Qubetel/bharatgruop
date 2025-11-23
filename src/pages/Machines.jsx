@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { CheckCircle, Zap, Shield, Clock, Award, DollarSign } from 'lucide-react';
 import logoSign from '../assets/bharat-group/logo-sign.png';
 
@@ -174,7 +175,14 @@ const Machines = () => {
     : machines.filter(machine => machine.category === selectedCategory);
 
   return (
-    <div className="min-h-screen">
+    <>
+      <Helmet>
+        <title>Our Machinery - Agarbatti, Paper Plate & Cup Making Machines | Bharat Group</title>
+        <meta name="description" content="Explore our range of eco-friendly machinery including Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines, and Dona Making Machines. Quality machines with easy payment options and timely delivery." />
+        <link rel="canonical" href="https://bharat-group.vercel.app/machines" />
+      </Helmet>
+
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-green-600">
         <div className="absolute inset-0 opacity-20">
@@ -352,6 +360,7 @@ const Machines = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'fram
 import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Factory, Zap, Shield, Star, Quote } from 'lucide-react';
 import Slider from 'react-slick';
 import logoSign from '../assets/bharat-group/logo-sign.png';
@@ -244,7 +245,14 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <>
+      <Helmet>
+        <title>Bharat Group - Leading Manufacturer of Eco-Friendly Machinery | Agarbatti, Paper Plate & Cup Machines</title>
+        <meta name="description" content="Bharat Group - Leading manufacturer of eco-friendly machinery since 2005. Specializing in Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines & Dona Making Machines. 100+ employees, 500+ satisfied clients across India." />
+        <link rel="canonical" href="https://bharat-group.vercel.app/" />
+      </Helmet>
+
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="scroll-section scroll-section-1 relative min-h-screen md:h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-green-600 py-20 md:py-0">
         {/* Animated Background with Parallax */}
@@ -930,6 +938,7 @@ const Home = () => {
         </div>
       </StackingSection>
     </div>
+    </>
   );
 };
 

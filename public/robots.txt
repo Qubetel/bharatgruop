@@ -1,0 +1,13 @@
+# Robots.txt for Bharat Group
+# https://bharat-group.vercel.app/
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://bharat-group.vercel.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

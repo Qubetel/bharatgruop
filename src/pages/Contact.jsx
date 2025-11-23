@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, MapPin, Clock, Send, Facebook, Twitter, Instagram, Linkedin, FileText } from 'lucide-react';
 import logoSign from '../assets/bharat-group/logo-sign.png';
 
@@ -79,7 +80,14 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <Helmet>
+        <title>Contact Us - Bharat Group | Get in Touch for Eco-Friendly Machinery</title>
+        <meta name="description" content="Contact Bharat Group for quality eco-friendly machinery. Located in Raipur, Chhattisgarh. Phone: 0771-3169531. Office: Wallfort Zone, Fafadih. GSTIN: 22CYHPP7549G1Z4" />
+        <link rel="canonical" href="https://bharat-group.vercel.app/contact" />
+      </Helmet>
+
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-green-600">
         <div className="absolute inset-0 opacity-20">
@@ -379,6 +387,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

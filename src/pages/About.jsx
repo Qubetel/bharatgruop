@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Target, Eye, Users } from 'lucide-react';
 import logoSign from '../assets/bharat-group/logo-sign.png';
 
@@ -23,7 +24,14 @@ const AnimatedSection = ({ children, delay = 0 }) => {
 const About = () => {
 
   return (
-    <div className="min-h-screen">
+    <>
+      <Helmet>
+        <title>About Bharat Group - Eco-Friendly Machinery Manufacturer Since 2005</title>
+        <meta name="description" content="Learn about Bharat Group - Established in 2005, we are a leading manufacturer of eco-friendly machinery with 100+ employees. Manufacturing, wholesaling, and retailing agarbatti, paper plate, paper cup and dona making machines." />
+        <link rel="canonical" href="https://bharat-group.vercel.app/about" />
+      </Helmet>
+
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-green-600">
         <div className="absolute inset-0 opacity-20">
@@ -180,6 +188,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
