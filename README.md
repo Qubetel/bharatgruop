@@ -7,7 +7,7 @@ A modern, responsive website for Bharat Group - Your trusted partner in eco-frie
 
 ## Live Demo
 
-🌐 **Production Site**: [https://vikashmahato23.github.io/bharat_group/](https://vikashmahato23.github.io/bharat_group/)
+🌐 **Production Site**: [https://bharat-group.vercel.app/](https://bharat-group.vercel.app/)
 
 ## Features
 
@@ -111,10 +111,9 @@ This project uses GitHub Actions for automated testing and deployment:
 - Uploads build artifacts
 
 ### Continuous Deployment (CD)
-- Automatically deploys to GitHub Pages on push to main
-- Available at: https://vikashmahato23.github.io/bharat_group/
-
-For detailed CI/CD setup instructions, see [CI-CD-SETUP.md](./CI-CD-SETUP.md)
+- Automatically deploys to Vercel on push to main
+- Available at: https://bharat-group.vercel.app/
+- Vercel handles automatic builds and deployments
 
 ## Development
 
@@ -142,20 +141,22 @@ npm run preview
 
 ## Deployment
 
-### GitHub Pages (Automatic)
+### Vercel (Automatic)
 
-Every push to the `main` branch automatically triggers deployment to GitHub Pages.
+Every push to the `main` branch automatically triggers deployment to Vercel.
 
-### Manual Deployment
+**Live Site**: https://bharat-group.vercel.app/
 
-1. Go to [Actions](https://github.com/vikashmahato23/bharat_group/actions)
-2. Select "Deploy to GitHub Pages" workflow
-3. Click "Run workflow"
+Vercel automatically:
+- Detects changes in GitHub
+- Builds the project with `npm run build`
+- Deploys to production
+- Provides preview deployments for PRs
 
-### Other Platforms
+### Other Deployment Options
 
-- **Vercel**: Connect your GitHub repo for automatic deployments
 - **Netlify**: Build command: `npm run build`, Publish directory: `dist`
+- **GitHub Pages**: Requires public repository
 - **Custom Server**: Upload the `dist` folder after building
 
 ## Browser Support
