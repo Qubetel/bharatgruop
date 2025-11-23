@@ -811,6 +811,8 @@ const Home = () => {
         </div>
       </StackingSection>
 
+
+
       {/* CTA Section */}
       <StackingSection index={6} className="scroll-section scroll-section-6 py-20 bg-gray-50">
         <div className="container mx-auto px-4">
