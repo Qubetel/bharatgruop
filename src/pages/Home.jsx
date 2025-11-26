@@ -180,56 +180,57 @@ const Home = () => {
     'After-Sales Support',
   ];
 
-  const testimonials = [
-    {
-      name: 'Rajesh Kumar',
-      business: 'Kumar Disposables Pvt. Ltd.',
-      location: 'Mumbai, Maharashtra',
-      image: 'https://i.pravatar.cc/150?img=12',
-      feedback: 'The paper plate machine from Bharat Group has transformed our business. The quality is exceptional and the ROI was achieved within 8 months. Highly recommend their products!',
-      rating: 5,
-    },
-    {
-      name: 'Priya Sharma',
-      business: 'Sharma Agarbatti Industries',
-      location: 'Delhi',
-      image: 'https://i.pravatar.cc/150?img=47',
-      feedback: 'We purchased an automatic agarbatti making machine 2 years ago. Still running smoothly with minimal maintenance. The after-sales support is outstanding!',
-      rating: 5,
-    },
-    {
-      name: 'Amit Patel',
-      business: 'Patel Paper Products',
-      location: 'Ahmedabad, Gujarat',
-      image: 'https://i.pravatar.cc/150?img=33',
-      feedback: 'Best investment for our business! The paper cup machine is highly efficient and produces consistent quality. The team at Bharat Group is very professional and helpful.',
-      rating: 5,
-    },
-    {
-      name: 'Sunita Reddy',
-      business: 'Eco-Friendly Disposables',
-      location: 'Hyderabad, Telangana',
-      image: 'https://i.pravatar.cc/150?img=45',
-      feedback: 'Excellent machinery with great build quality. The dona making machine has helped us scale our production significantly. Thank you Bharat Group!',
-      rating: 5,
-    },
-    {
-      name: 'Vikram Singh',
-      business: 'Singh Manufacturing Co.',
-      location: 'Jaipur, Rajasthan',
-      image: 'https://i.pravatar.cc/150?img=15',
-      feedback: 'Outstanding service and product quality! The team provided complete training and installation support. Our production capacity has doubled since we got the machine.',
-      rating: 5,
-    },
-    {
-      name: 'Meera Iyer',
-      business: 'Iyer Eco Solutions',
-      location: 'Bangalore, Karnataka',
-      image: 'https://i.pravatar.cc/150?img=48',
-      feedback: 'Very satisfied with the purchase. The machine quality is top-notch and the pricing was very competitive. Bharat Group delivers what they promise!',
-      rating: 5,
-    },
-  ];
+  // Testimonials data - commented out with section
+  // const testimonials = [
+  //   {
+  //     name: 'Rajesh Kumar',
+  //     business: 'Kumar Disposables Pvt. Ltd.',
+  //     location: 'Mumbai, Maharashtra',
+  //     image: 'https://i.pravatar.cc/150?img=12',
+  //     feedback: 'The paper plate machine from Bharat Group has transformed our business. The quality is exceptional and the ROI was achieved within 8 months. Highly recommend their products!',
+  //     rating: 5,
+  //   },
+  //   {
+  //     name: 'Priya Sharma',
+  //     business: 'Sharma Agarbatti Industries',
+  //     location: 'Delhi',
+  //     image: 'https://i.pravatar.cc/150?img=47',
+  //     feedback: 'We purchased an automatic agarbatti making machine 2 years ago. Still running smoothly with minimal maintenance. The after-sales support is outstanding!',
+  //     rating: 5,
+  //   },
+  //   {
+  //     name: 'Amit Patel',
+  //     business: 'Patel Paper Products',
+  //     location: 'Ahmedabad, Gujarat',
+  //     image: 'https://i.pravatar.cc/150?img=33',
+  //     feedback: 'Best investment for our business! The paper cup machine is highly efficient and produces consistent quality. The team at Bharat Group is very professional and helpful.',
+  //     rating: 5,
+  //   },
+  //   {
+  //     name: 'Sunita Reddy',
+  //     business: 'Eco-Friendly Disposables',
+  //     location: 'Hyderabad, Telangana',
+  //     image: 'https://i.pravatar.cc/150?img=45',
+  //     feedback: 'Excellent machinery with great build quality. The dona making machine has helped us scale our production significantly. Thank you Bharat Group!',
+  //     rating: 5,
+  //   },
+  //   {
+  //     name: 'Vikram Singh',
+  //     business: 'Singh Manufacturing Co.',
+  //     location: 'Jaipur, Rajasthan',
+  //     image: 'https://i.pravatar.cc/150?img=15',
+  //     feedback: 'Outstanding service and product quality! The team provided complete training and installation support. Our production capacity has doubled since we got the machine.',
+  //     rating: 5,
+  //   },
+  //   {
+  //     name: 'Meera Iyer',
+  //     business: 'Iyer Eco Solutions',
+  //     location: 'Bangalore, Karnataka',
+  //     image: 'https://i.pravatar.cc/150?img=48',
+  //     feedback: 'Very satisfied with the purchase. The machine quality is top-notch and the pricing was very competitive. Bharat Group delivers what they promise!',
+  //     rating: 5,
+  //   },
+  // ];
 
   // Floating animation variants
   const floatingVariants = {
