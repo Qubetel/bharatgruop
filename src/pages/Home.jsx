@@ -1,11 +1,13 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Factory, Zap, Shield, Star, Quote } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Factory, Shield, Star, Quote } from 'lucide-react';
 import Slider from 'react-slick';
-import logoSign from '../assets/bharat-group/logo-sign.png';
+
+// Lazy load 3D component
+const Hero3D = lazy(() => import('../components/Hero3D'));
 
 const AnimatedSection = ({ children, delay = 0 }) => {
   const ref = useRef(null);
@@ -108,13 +110,6 @@ const Home = () => {
     // Initialize with current window width
     return typeof window !== 'undefined' ? window.innerWidth : 0;
   });
-
-  // Parallax scroll tracking
-  const { scrollY } = useScroll();
-  const parallaxY1 = useTransform(scrollY, [0, 1000], [0, -200]);
-  const parallaxY2 = useTransform(scrollY, [0, 1000], [0, -150]);
-  const parallaxY3 = useTransform(scrollY, [0, 1000], [0, -100]);
-  const parallaxRotate = useTransform(scrollY, [0, 1000], [0, 180]);
 
   useEffect(() => {
     // Add resize listener
@@ -232,19 +227,6 @@ const Home = () => {
   //   },
   // ];
 
-  // Floating animation variants
-  const floatingVariants = {
-    initial: { y: 0 },
-    animate: {
-      y: [-20, 20, -20],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
     <>
       <Helmet>
@@ -256,91 +238,15 @@ const Home = () => {
       <div className="min-h-screen">
       {/* Hero Section */}
       <section className="scroll-section scroll-section-1 relative min-h-screen md:h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-green-600 py-20 md:py-0">
-        {/* Animated Background with Parallax */}
-        <div className="absolute inset-0 opacity-20">
-          <motion.div
-            style={{ y: parallaxY1 }}
-            className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob"
-          ></motion.div>
-          <motion.div
-            style={{ y: parallaxY2 }}
-            className="absolute top-40 right-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"
-          ></motion.div>
-          <motion.div
-            style={{ y: parallaxY3 }}
-            className="absolute bottom-20 left-1/2 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"
-          ></motion.div>
-        </div>
+        {/* 3D Interactive Background */}
+        <Suspense fallback={null}>
+          <Hero3D />
+        </Suspense>
 
-        {/* Animated Floating Icons with Parallax */}
-        <motion.div
-          variants={floatingVariants}
-          initial="initial"
-          animate="animate"
-          style={{ y: parallaxY1, rotate: parallaxRotate }}
-          className="absolute top-32 left-20 hidden lg:block"
-        >
-          <motion.div
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            <img src={logoSign} alt="Bharat Group" className="w-16 h-16 opacity-30" style={{ transform: 'translateZ(30px)' }} />
-          </motion.div>
-        </motion.div>
+        {/* Gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-900/70 via-green-800/50 to-green-600/60 z-[1]"></div>
 
-        <motion.div
-          variants={floatingVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 1 }}
-          style={{ y: parallaxY2 }}
-          className="absolute top-64 right-32 hidden lg:block"
-        >
-          <motion.div
-            animate={{ rotate: [360, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            <Zap className="w-12 h-12 text-yellow-300 opacity-40" style={{ transform: 'translateZ(40px)' }} />
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          variants={floatingVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 2 }}
-          style={{ y: parallaxY3 }}
-          className="absolute bottom-32 right-20 hidden lg:block"
-        >
-          <motion.div
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            <img src={logoSign} alt="Bharat Group" className="w-14 h-14 opacity-30" style={{ transform: 'translateZ(50px)' }} />
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          variants={floatingVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.5 }}
-          style={{ y: parallaxY2 }}
-          className="absolute bottom-48 left-1/4 hidden lg:block"
-        >
-          <motion.div
-            animate={{ rotate: [360, 0] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            <img src={logoSign} alt="Bharat Group" className="w-12 h-12 opacity-20" style={{ transform: 'translateZ(35px)' }} />
-          </motion.div>
-        </motion.div>
-
-        <div className="container mx-auto px-4 z-10">
+        <div className="container mx-auto px-4 z-10 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
