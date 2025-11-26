@@ -20,7 +20,7 @@ const Navbar = () => {
     { name: 'Home', path: '/', icon: Home },
     { name: 'About', path: '/about', icon: Info },
     { name: 'Machines', path: '/machines', icon: Package },
-    { name: 'Contact', path: '/contact', icon: Mail },
+    { name: 'Contact', path: '/contact#send-message', icon: Mail },
   ];
 
   return (
@@ -51,7 +51,7 @@ const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   className={`font-semibold transition-colors duration-300 relative group ${
-                    location.pathname === link.path
+                    location.pathname === link.path.split('#')[0]
                       ? scrolled
                         ? 'text-green-600'
                         : 'text-white'
@@ -63,7 +63,7 @@ const Navbar = () => {
                   {link.name}
                   <span
                     className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full ${
-                      location.pathname === link.path ? 'w-full' : ''
+                      location.pathname === link.path.split('#')[0] ? 'w-full' : ''
                     }`}
                   ></span>
                 </Link>
@@ -93,7 +93,7 @@ const Navbar = () => {
         <div className="grid grid-cols-4 h-16">
           {navLinks.map((link) => {
             const Icon = link.icon;
-            const isActive = location.pathname === link.path;
+            const isActive = location.pathname === link.path.split('#')[0];
 
             return (
               <Link

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, MapPin, Clock, Send, Facebook, Twitter, Instagram, Linkedin, FileText } from 'lucide-react';
 import logoSign from '../assets/bharat-group/logo-sign.png';
@@ -22,6 +23,9 @@ const AnimatedSection = ({ children, delay = 0 }) => {
 };
 
 const Contact = () => {
+  const location = useLocation();
+  const formRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,6 +33,14 @@ const Contact = () => {
     subject: '',
     message: '',
   });
+
+  useEffect(() => {
+    if (location.hash === '#send-message' && formRef.current) {
+      setTimeout(() => {
+        formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }, [location]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -159,7 +171,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
             {/* Contact Form */}
             <AnimatedSection>
-              <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-xl">
+              <div ref={formRef} id="send-message" className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-xl scroll-mt-24">
                 <h2 className="text-3xl font-bold text-gray-800 mb-2">Send Us a Message</h2>
                 <p className="text-gray-600 mb-8">
                   Fill out the form below and we'll get back to you as soon as possible

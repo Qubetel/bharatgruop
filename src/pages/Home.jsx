@@ -141,25 +141,25 @@ const Home = () => {
     {
       title: 'Agarbatti Making Machine',
       description: 'High-speed automatic agarbatti manufacturing with precision engineering',
-      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=600&q=80',
       features: ['Automatic Operation', 'High Production Capacity', 'Energy Efficient'],
     },
     {
       title: 'Paper Plate Machine',
       description: 'Eco-friendly paper plate production with advanced technology',
-      image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80',
       features: ['Eco-Friendly', 'Low Maintenance', 'Quick Setup'],
     },
     {
       title: 'Paper Cup Machine',
       description: 'Fully automatic paper cup making with superior quality output',
-      image: 'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80',
       features: ['Fully Automatic', 'Multiple Sizes', 'Durable Design'],
     },
     {
       title: 'Dona Making Machine',
       description: 'Premium quality dona making machine for eco-friendly disposables',
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80',
       features: ['Cost Effective', 'Easy to Operate', 'Consistent Quality'],
     },
   ];
@@ -430,7 +430,7 @@ const Home = () => {
                     </motion.div>
                   </motion.button>
                 </Link>
-                <Link to="/contact" className="w-full sm:w-auto">
+                <Link to="/contact#send-message" className="w-full sm:w-auto">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -582,7 +582,7 @@ const Home = () => {
       </StackingSection>
 
       {/* Products Section */}
-      <StackingSection index={3} className="scroll-section scroll-section-3 py-20 bg-white">
+      <StackingSection index={3} className="scroll-section scroll-section-3 py-20 bg-gradient-to-br from-green-50 to-white">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -672,16 +672,11 @@ const Home = () => {
                         ))}
                       </ul>
                       <Link
-                        to="/machines"
-                        className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 group mt-auto"
+                        to="/contact#send-message"
+                        className="inline-flex items-center justify-center px-6 py-2 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 mt-auto"
                       >
-                        Learn More
-                        <motion.div
-                          animate={{ x: [0, 5, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        >
-                          <ArrowRight className="ml-2 w-4 h-4" />
-                        </motion.div>
+                        Order Now
+                        <ArrowRight className="ml-2 w-4 h-4" />
                       </Link>
                     </div>
                   </motion.div>
@@ -743,7 +738,8 @@ const Home = () => {
         </div>
       </StackingSection>
 
-      {/* Customer Testimonials Section */}
+      {/* Customer Testimonials Section - Commented Out */}
+      {/*
       <StackingSection index={5} className="scroll-section scroll-section-5 py-20 bg-gradient-to-br from-green-50 to-white">
         <div className="container mx-auto px-4">
           <AnimatedSection>
@@ -797,7 +793,6 @@ const Home = () => {
                     viewport={{ once: true }}
                     className="bg-white rounded-2xl shadow-lg p-8 border-2 border-green-100 hover:border-green-300 hover:shadow-2xl transition-all duration-300 flex flex-col testimonial-carousel-card"
                   >
-                    {/* Quote Icon */}
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
@@ -808,7 +803,6 @@ const Home = () => {
                       <Quote className="w-12 h-12 text-green-500" />
                     </motion.div>
 
-                    {/* Rating Stars */}
                     <div className="flex gap-1 mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <motion.div
@@ -823,12 +817,10 @@ const Home = () => {
                       ))}
                     </div>
 
-                    {/* Feedback */}
                     <p className="text-gray-700 mb-6 italic leading-relaxed flex-grow">
                       "{testimonial.feedback}"
                     </p>
 
-                    {/* Customer Info */}
                     <div className="flex items-center gap-4 pt-4 border-t-2 border-green-100 mt-auto">
                       <motion.img
                         whileHover={{ scale: 1.1, rotate: 5 }}
@@ -843,7 +835,6 @@ const Home = () => {
                       </div>
                     </div>
 
-                    {/* Verified Badge */}
                     <motion.div
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -861,7 +852,6 @@ const Home = () => {
             )}
           </div>
 
-          {/* Trust Indicators */}
           <AnimatedSection delay={0.3}>
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {[
@@ -884,6 +874,7 @@ const Home = () => {
           </AnimatedSection>
         </div>
       </StackingSection>
+      */}
 
 
 
@@ -922,7 +913,7 @@ const Home = () => {
                 >
                   Get in touch with us today and take the first step towards success
                 </motion.p>
-                <Link to="/contact">
+                <Link to="/contact#send-message">
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
