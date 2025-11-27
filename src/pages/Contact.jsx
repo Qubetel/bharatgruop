@@ -279,7 +279,7 @@ const Contact = () => {
                 <div className="bg-gray-200 rounded-2xl h-64 overflow-hidden shadow-xl">
                   <iframe
                     title="Location Map"
-                    src="https://maps.google.com/maps?q=21.2578526,81.6368578&hl=en&z=17&output=embed"
+                    src="https://maps.google.com/maps?q=21.258007,81.636703&hl=en&z=17&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

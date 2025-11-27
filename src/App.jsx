@@ -9,6 +9,8 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Machines = lazy(() => import('./pages/Machines'));
 const Contact = lazy(() => import('./pages/Contact'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -33,6 +35,8 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/machines" element={<Machines />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-conditions" element={<TermsConditions />} />
             </Routes>
           </Suspense>
         </main>

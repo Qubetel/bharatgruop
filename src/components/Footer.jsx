@@ -99,12 +99,12 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Bharat Group. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-green-500 transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors">
-                Terms of Service
-              </a>
+              </Link>
+              <Link to="/terms-conditions" className="text-gray-400 hover:text-green-500 transition-colors">
+                Terms & Conditions
+              </Link>
             </div>
           </div>
         </div>
