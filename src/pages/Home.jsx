@@ -232,7 +232,58 @@ const Home = () => {
       <Helmet>
         <title>Bharat Group - Leading Manufacturer of Eco-Friendly Machinery | Agarbatti, Paper Plate & Cup Machines</title>
         <meta name="description" content="Bharat Group - Leading manufacturer of eco-friendly machinery since 2005. Specializing in Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines & Dona Making Machines. 100+ employees, 500+ satisfied clients across India." />
+        <meta name="keywords" content="agarbatti making machine, paper plate machine, paper cup machine, dona making machine, eco-friendly machinery, disposable product machines, Bharat Group, Raipur, Chhattisgarh, manufacturing machines India" />
         <link rel="canonical" href="https://bharat-group.vercel.app/" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Bharat Group - Leading Manufacturer of Eco-Friendly Machinery" />
+        <meta property="og:description" content="Leading manufacturer of eco-friendly machinery since 2005. Agarbatti, Paper Plate, Paper Cup & Dona Making Machines. 500+ satisfied clients across India." />
+        <meta property="og:url" content="https://bharat-group.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://bharat-group.vercel.app/og-image.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Bharat Group - Eco-Friendly Machinery Manufacturer" />
+        <meta name="twitter:description" content="Leading manufacturer of Agarbatti, Paper Plate, Paper Cup & Dona Making Machines since 2005." />
+        <meta name="twitter:image" content="https://bharat-group.vercel.app/og-image.png" />
+
+        {/* Structured Data - Organization */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Bharat Group",
+            "url": "https://bharat-group.vercel.app",
+            "logo": "https://bharat-group.vercel.app/og-image.png",
+            "description": "Leading manufacturer of eco-friendly machinery since 2005",
+            "foundingDate": "2005",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Office No. 207, 2nd Floor, Wallfort Zone, Fafadih",
+              "addressLocality": "Raipur",
+              "addressRegion": "Chhattisgarh",
+              "postalCode": "492001",
+              "addressCountry": "IN"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-771-3169531",
+              "contactType": "sales"
+            }
+          }
+        `}</script>
+
+        {/* Structured Data - WebSite with SearchAction */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Bharat Group",
+            "url": "https://bharat-group.vercel.app",
+            "description": "Leading manufacturer of eco-friendly machinery - Agarbatti, Paper Plate, Paper Cup & Dona Making Machines"
+          }
+        `}</script>
       </Helmet>
 
       <div className="min-h-screen">

@@ -56,7 +56,36 @@ const TermsConditions = () => {
       <Helmet>
         <title>Terms & Conditions - Bharat Group | Purchase Terms</title>
         <meta name="description" content="Bharat Group Terms and Conditions - Read our terms for purchasing machinery, warranty, delivery, payments, and after-sales service." />
+        <meta name="keywords" content="Bharat Group terms, purchase terms, machinery warranty, delivery terms, payment terms" />
         <link rel="canonical" href="https://bharat-group.vercel.app/terms-conditions" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Terms & Conditions - Bharat Group" />
+        <meta property="og:description" content="Read our terms for purchasing machinery, warranty, delivery and payments." />
+        <meta property="og:url" content="https://bharat-group.vercel.app/terms-conditions" />
+        <meta property="og:type" content="website" />
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://bharat-group.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Terms & Conditions",
+                "item": "https://bharat-group.vercel.app/terms-conditions"
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
 
       <div className="min-h-screen">

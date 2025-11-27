@@ -3,11 +3,29 @@
 
 User-agent: *
 Allow: /
+Allow: /about
+Allow: /machines
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-conditions
+
+# Disallow admin and api paths
 Disallow: /api/
 Disallow: /admin/
+Disallow: /*.json$
 
 # Sitemap
 Sitemap: https://bharat-group.vercel.app/sitemap.xml
 
-# Crawl-delay
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1

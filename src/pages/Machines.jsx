@@ -110,7 +110,106 @@ const Machines = () => {
       <Helmet>
         <title>Our Machinery - Agarbatti, Paper Plate & Cup Making Machines | Bharat Group</title>
         <meta name="description" content="Explore our range of eco-friendly machinery including Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines, and Dona Making Machines. Quality machines with easy payment options and timely delivery." />
+        <meta name="keywords" content="buy agarbatti making machine, paper plate machine price, paper cup machine India, dona making machine, automatic agarbatti machine, hydraulic paper plate machine, eco-friendly machinery" />
         <link rel="canonical" href="https://bharat-group.vercel.app/machines" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Premium Eco-Friendly Machinery - Bharat Group" />
+        <meta property="og:description" content="Agarbatti, Paper Plate, Paper Cup & Dona Making Machines. High efficiency, durable build, fast production. Order now!" />
+        <meta property="og:url" content="https://bharat-group.vercel.app/machines" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://bharat-group.vercel.app/og-image.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Eco-Friendly Machinery - Bharat Group" />
+        <meta name="twitter:description" content="Premium quality Agarbatti, Paper Plate, Paper Cup & Dona Making Machines." />
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://bharat-group.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Machines",
+                "item": "https://bharat-group.vercel.app/machines"
+              }
+            ]
+          }
+        `}</script>
+
+        {/* Product List Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Bharat Group Machinery",
+            "description": "Premium eco-friendly manufacturing machines",
+            "itemListElement": [
+              {
+                "@type": "Product",
+                "position": 1,
+                "name": "Automatic Agarbatti Making Machine",
+                "description": "High-speed automatic agarbatti manufacturing with precision engineering",
+                "brand": { "@type": "Brand", "name": "Bharat Group" },
+                "category": "Agarbatti Making Machines",
+                "offers": {
+                  "@type": "Offer",
+                  "availability": "https://schema.org/InStock",
+                  "priceCurrency": "INR"
+                }
+              },
+              {
+                "@type": "Product",
+                "position": 2,
+                "name": "Fully Automatic Paper Plate Machine",
+                "description": "High-volume eco-friendly paper plate production",
+                "brand": { "@type": "Brand", "name": "Bharat Group" },
+                "category": "Paper Plate Machines",
+                "offers": {
+                  "@type": "Offer",
+                  "availability": "https://schema.org/InStock",
+                  "priceCurrency": "INR"
+                }
+              },
+              {
+                "@type": "Product",
+                "position": 3,
+                "name": "High-Speed Paper Cup Machine",
+                "description": "Automatic paper cup manufacturing with multiple sizes",
+                "brand": { "@type": "Brand", "name": "Bharat Group" },
+                "category": "Paper Cup Machines",
+                "offers": {
+                  "@type": "Offer",
+                  "availability": "https://schema.org/InStock",
+                  "priceCurrency": "INR"
+                }
+              },
+              {
+                "@type": "Product",
+                "position": 4,
+                "name": "Automatic Dona Making Machine",
+                "description": "Eco-friendly disposable bowl production machine",
+                "brand": { "@type": "Brand", "name": "Bharat Group" },
+                "category": "Dona Making Machines",
+                "offers": {
+                  "@type": "Offer",
+                  "availability": "https://schema.org/InStock",
+                  "priceCurrency": "INR"
+                }
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
 
       <div className="min-h-screen">

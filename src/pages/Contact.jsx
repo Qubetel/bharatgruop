@@ -96,7 +96,116 @@ const Contact = () => {
       <Helmet>
         <title>Contact Us - Bharat Group | Get in Touch for Eco-Friendly Machinery</title>
         <meta name="description" content="Contact Bharat Group for quality eco-friendly machinery. Located in Raipur, Chhattisgarh. Phone: 0771-3169531. Office: Wallfort Zone, Fafadih. GSTIN: 22CYHPP7549G1Z4" />
+        <meta name="keywords" content="contact Bharat Group, machinery dealer Raipur, agarbatti machine dealer, paper plate machine contact, Chhattisgarh machinery supplier" />
         <link rel="canonical" href="https://bharat-group.vercel.app/contact" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact Bharat Group - Eco-Friendly Machinery" />
+        <meta property="og:description" content="Get in touch for Agarbatti, Paper Plate, Paper Cup & Dona Making Machines. Phone: 0771-3169531, Raipur, Chhattisgarh." />
+        <meta property="og:url" content="https://bharat-group.vercel.app/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://bharat-group.vercel.app/og-image.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Bharat Group" />
+        <meta name="twitter:description" content="Get in touch for eco-friendly machinery. Phone: 0771-3169531" />
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://bharat-group.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": "https://bharat-group.vercel.app/contact"
+              }
+            ]
+          }
+        `}</script>
+
+        {/* Local Business Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Bharat Group",
+            "image": "https://bharat-group.vercel.app/og-image.png",
+            "url": "https://bharat-group.vercel.app",
+            "telephone": "+91-771-3169531",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Office No. 207, 2nd Floor, Wallfort Zone, Fafadih",
+              "addressLocality": "Raipur",
+              "addressRegion": "Chhattisgarh",
+              "postalCode": "492001",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 21.258007,
+              "longitude": 81.636703
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "priceRange": "$$"
+          }
+        `}</script>
+
+        {/* FAQ Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the warranty period for your machines?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "All our machines come with a 1-year warranty covering manufacturing defects and parts replacement."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide installation and training?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we provide free installation and comprehensive training to ensure smooth operation of the machinery."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What are the payment options available?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We offer flexible payment options including EMI, bank transfers, and various digital payment methods."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does delivery take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Typically 7-15 business days depending on your location and machine availability."
+                }
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
 
       <div className="min-h-screen">

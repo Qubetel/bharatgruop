@@ -28,7 +28,60 @@ const About = () => {
       <Helmet>
         <title>About Bharat Group - Eco-Friendly Machinery Manufacturer Since 2005</title>
         <meta name="description" content="Learn about Bharat Group - Established in 2005, we are a leading manufacturer of eco-friendly machinery with 100+ employees. Manufacturing, wholesaling, and retailing agarbatti, paper plate, paper cup and dona making machines." />
+        <meta name="keywords" content="Bharat Group about, eco-friendly machinery company, agarbatti machine manufacturer, paper plate machine company, Indian machinery manufacturer, Raipur machinery" />
         <link rel="canonical" href="https://bharat-group.vercel.app/about" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="About Bharat Group - Eco-Friendly Machinery Manufacturer" />
+        <meta property="og:description" content="Established in 2005 with 100+ employees. Manufacturing agarbatti, paper plate, paper cup and dona making machines." />
+        <meta property="og:url" content="https://bharat-group.vercel.app/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://bharat-group.vercel.app/og-image.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Bharat Group - Machinery Manufacturer Since 2005" />
+        <meta name="twitter:description" content="100+ employees, 500+ clients. Leading eco-friendly machinery manufacturer in India." />
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://bharat-group.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Us",
+                "item": "https://bharat-group.vercel.app/about"
+              }
+            ]
+          }
+        `}</script>
+
+        {/* About Page Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Bharat Group",
+            "description": "Learn about Bharat Group - Leading manufacturer of eco-friendly machinery since 2005",
+            "url": "https://bharat-group.vercel.app/about",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Bharat Group",
+              "foundingDate": "2005",
+              "numberOfEmployees": "100+",
+              "slogan": "Your Trusted Partner in Eco-Friendly Machinery Manufacturing"
+            }
+          }
+        `}</script>
       </Helmet>
 
       <div className="min-h-screen">
