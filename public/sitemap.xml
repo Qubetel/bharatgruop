@@ -34,4 +34,20 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Privacy Policy Page -->
+  <url>
+    <loc>https://bharat-group.vercel.app/privacy-policy</loc>
+    <lastmod>2024-11-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms & Conditions Page -->
+  <url>
+    <loc>https://bharat-group.vercel.app/terms-conditions</loc>
+    <lastmod>2024-11-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
