@@ -6,6 +6,9 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Factory, Shield, Star, Quote } from 'lucide-react';
 import Slider from 'react-slick';
 
+// Import machines data from separate file
+import { machines } from '../data/machinesData';
+
 // Lazy load 3D component
 const Hero3D = lazy(() => import('../components/Hero3D'));
 
@@ -132,32 +135,14 @@ const Home = () => {
     return 3;
   };
 
-  const products = [
-    {
-      title: 'Agarbatti Making Machine',
-      description: 'High-speed automatic agarbatti manufacturing with precision engineering',
-      image: 'https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=600&q=80',
-      features: ['Automatic Operation', 'High Production Capacity', 'Energy Efficient'],
-    },
-    {
-      title: 'Paper Plate Machine',
-      description: 'Eco-friendly paper plate production with advanced technology',
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80',
-      features: ['Eco-Friendly', 'Low Maintenance', 'Quick Setup'],
-    },
-    {
-      title: 'Paper Cup Machine',
-      description: 'Fully automatic paper cup making with superior quality output',
-      image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80',
-      features: ['Fully Automatic', 'Multiple Sizes', 'Durable Design'],
-    },
-    {
-      title: 'Dona Making Machine',
-      description: 'Premium quality dona making machine for eco-friendly disposables',
-      image: 'https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80',
-      features: ['Cost Effective', 'Easy to Operate', 'Consistent Quality'],
-    },
-  ];
+  // Use machines data from machinesData.js - show first 3 features from keyFeatures
+  const products = machines.map(machine => ({
+    title: machine.name,
+    description: machine.description,
+    image: machine.image,
+    features: machine.keyFeatures.slice(0, 3).map(f => f.title),
+    id: machine.id
+  }));
 
   const stats = [
     { icon: Users, value: '100+', label: 'Expert Team Members' },
@@ -593,13 +578,13 @@ const Home = () => {
                     viewport={{ once: true }}
                     className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col product-carousel-card"
                   >
-                    <div className="relative h-48 overflow-hidden group flex-shrink-0">
+                    <div className="relative h-48 overflow-hidden group flex-shrink-0 bg-gray-100">
                       <motion.img
-                        whileHover={{ scale: 1.2 }}
+                        whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.5 }}
                         src={product.image}
                         alt={product.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain p-2"
                       />
                       <motion.div
                         initial={{ opacity: 0 }}
