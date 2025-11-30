@@ -21,13 +21,13 @@ const AnimatedSection = ({ children, delay = 0 }) => {
   );
 };
 
-const PolicySection = ({ icon: Icon, title, children, delay = 0 }) => {
+const PolicySection = ({ icon: IconComponent, title, children, delay = 0 }) => {
   return (
     <AnimatedSection delay={delay}>
       <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
         <div className="flex items-center mb-6">
           <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-xl mr-4">
-            <Icon className="w-6 h-6 text-green-600" />
+            <IconComponent className="w-6 h-6 text-green-600" />
           </div>
           <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
         </div>
