@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useRef, useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle, Zap, Shield, Clock, Award, DollarSign, X, ChevronRight } from 'lucide-react';
 import logoSign from '../assets/bharat-group/logo-sign.png';
@@ -115,6 +115,23 @@ const ProductModal = ({ machine, onClose }) => {
 const Machines = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedMachine, setSelectedMachine] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Check URL for product parameter and open modal
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const productId = searchParams.get('product');
+
+    if (productId) {
+      const machine = machines.find(m => m.id === parseInt(productId));
+      if (machine) {
+        setSelectedMachine(machine);
+        // Clear the URL parameter after opening modal
+        navigate('/machines', { replace: true });
+      }
+    }
+  }, [location.search, navigate]);
 
   const benefits = [
     { icon: Zap, title: 'High Efficiency', description: 'Maximum output with minimal input' },

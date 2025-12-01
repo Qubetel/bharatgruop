@@ -62,11 +62,27 @@ const Footer = () => {
           {/* Products */}
           <div>
             <h3 className="text-xl font-bold mb-4">Our Products</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>Agarbatti Making Machines</li>
-              <li>Paper Plate Machines</li>
-              <li>Paper Cup Machines</li>
-              <li>Dona Making Machines</li>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/machines?product=1" className="text-gray-400 hover:text-green-500 transition-colors">
+                  Agarbatti Making Machines
+                </Link>
+              </li>
+              <li>
+                <Link to="/machines?product=5" className="text-gray-400 hover:text-green-500 transition-colors">
+                  Paper Plate Machines
+                </Link>
+              </li>
+              <li>
+                <Link to="/machines?product=3" className="text-gray-400 hover:text-green-500 transition-colors">
+                  Paper Cup Machines
+                </Link>
+              </li>
+              <li>
+                <Link to="/machines?product=2" className="text-gray-400 hover:text-green-500 transition-colors">
+                  Papad Making Machines
+                </Link>
+              </li>
             </ul>
           </div>
 
