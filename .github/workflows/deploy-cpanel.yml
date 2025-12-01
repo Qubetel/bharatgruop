@@ -36,6 +36,10 @@ jobs:
           RewriteCond %{HTTPS} off
           RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+          # Skip API requests from React Router handling
+          RewriteCond %{REQUEST_URI} ^/api/ [NC]
+          RewriteRule ^ - [L]
+
           # Handle React Router - redirect all requests to index.html
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteCond %{REQUEST_FILENAME} !-d
@@ -68,6 +72,12 @@ jobs:
           Header set X-XSS-Protection "1; mode=block"
         </IfModule>
         EOF
+
+    - name: Copy PHP API to dist
+      run: |
+        mkdir -p dist/api
+        cp server-php/api/contact.php dist/api/
+        cp server-php/config.php dist/
 
     - name: Deploy to cPanel via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
