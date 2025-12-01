@@ -1,13 +1,13 @@
 # Bharat Group Website
 
 ![CI](https://github.com/vikashmahato23/bharat_group/actions/workflows/ci.yml/badge.svg)
-[![Deploy with Vercel](https://vercel.com/button)](https://bharat-group.vercel.app/)
+[![Deploy with Vercel](https://vercel.com/button)](https://bharatgroup.org/)
 
 A modern, responsive website for Bharat Group - Your trusted partner in eco-friendly machinery manufacturing since 2005.
 
 ## Live Demo
 
-🌐 **Production Site**: [https://bharat-group.vercel.app/](https://bharat-group.vercel.app/)
+🌐 **Production Site**: [https://bharatgroup.org/](https://bharatgroup.org/)
 
 ## Features
 
@@ -112,7 +112,7 @@ This project uses GitHub Actions for automated testing and deployment:
 
 ### Continuous Deployment (CD)
 - Automatically deploys to Vercel on push to main
-- Available at: https://bharat-group.vercel.app/
+- Available at: https://bharatgroup.org/
 - Vercel handles automatic builds and deployments
 
 ## Development
@@ -145,7 +145,7 @@ npm run preview
 
 Every push to the `main` branch automatically triggers deployment to Vercel.
 
-**Live Site**: https://bharat-group.vercel.app/
+**Live Site**: https://bharatgroup.org/
 
 Vercel automatically:
 - Detects changes in GitHub

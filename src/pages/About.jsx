@@ -29,14 +29,14 @@ const About = () => {
         <title>About Bharat Group - Eco-Friendly Machinery Manufacturer Since 2005</title>
         <meta name="description" content="Learn about Bharat Group - Established in 2005, we are a leading manufacturer of eco-friendly machinery with 100+ employees. Manufacturing, wholesaling, and retailing agarbatti, paper plate, paper cup and dona making machines." />
         <meta name="keywords" content="Bharat Group about, eco-friendly machinery company, agarbatti machine manufacturer, paper plate machine company, Indian machinery manufacturer, Raipur machinery" />
-        <link rel="canonical" href="https://bharat-group.vercel.app/about" />
+        <link rel="canonical" href="https://bharatgroup.org/about" />
 
         {/* Open Graph */}
         <meta property="og:title" content="About Bharat Group - Eco-Friendly Machinery Manufacturer" />
         <meta property="og:description" content="Established in 2005 with 100+ employees. Manufacturing agarbatti, paper plate, paper cup and dona making machines." />
-        <meta property="og:url" content="https://bharat-group.vercel.app/about" />
+        <meta property="og:url" content="https://bharatgroup.org/about" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://bharat-group.vercel.app/og-image.png" />
+        <meta property="og:image" content="https://bharatgroup.org/og-image.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -53,13 +53,13 @@ const About = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://bharat-group.vercel.app/"
+                "item": "https://bharatgroup.org/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "About Us",
-                "item": "https://bharat-group.vercel.app/about"
+                "item": "https://bharatgroup.org/about"
               }
             ]
           }
@@ -72,7 +72,7 @@ const About = () => {
             "@type": "AboutPage",
             "name": "About Bharat Group",
             "description": "Learn about Bharat Group - Leading manufacturer of eco-friendly machinery since 2005",
-            "url": "https://bharat-group.vercel.app/about",
+            "url": "https://bharatgroup.org/about",
             "mainEntity": {
               "@type": "Organization",
               "name": "Bharat Group",

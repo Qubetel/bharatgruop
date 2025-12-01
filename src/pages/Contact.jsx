@@ -71,7 +71,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Address',
-      details: ['info@bharatgroup.com', 'sales@bharatgroup.com'],
+      details: ['info@bharatgroup.org', 'sales@bharatgroup.org'],
       color: 'text-blue-600',
       bg: 'bg-blue-100',
     },
@@ -97,14 +97,14 @@ const Contact = () => {
         <title>Contact Us - Bharat Group | Get in Touch for Eco-Friendly Machinery</title>
         <meta name="description" content="Contact Bharat Group for quality eco-friendly machinery. Located in Raipur, Chhattisgarh. Phone: 0771-3169531. Office: Wallfort Zone, Fafadih. GSTIN: 22CYHPP7549G1Z4" />
         <meta name="keywords" content="contact Bharat Group, machinery dealer Raipur, agarbatti machine dealer, paper plate machine contact, Chhattisgarh machinery supplier" />
-        <link rel="canonical" href="https://bharat-group.vercel.app/contact" />
+        <link rel="canonical" href="https://bharatgroup.org/contact" />
 
         {/* Open Graph */}
         <meta property="og:title" content="Contact Bharat Group - Eco-Friendly Machinery" />
         <meta property="og:description" content="Get in touch for Agarbatti, Paper Plate, Paper Cup & Dona Making Machines. Phone: 0771-3169531, Raipur, Chhattisgarh." />
-        <meta property="og:url" content="https://bharat-group.vercel.app/contact" />
+        <meta property="og:url" content="https://bharatgroup.org/contact" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://bharat-group.vercel.app/og-image.png" />
+        <meta property="og:image" content="https://bharatgroup.org/og-image.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -121,13 +121,13 @@ const Contact = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://bharat-group.vercel.app/"
+                "item": "https://bharatgroup.org/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Contact",
-                "item": "https://bharat-group.vercel.app/contact"
+                "item": "https://bharatgroup.org/contact"
               }
             ]
           }
@@ -139,8 +139,8 @@ const Contact = () => {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Bharat Group",
-            "image": "https://bharat-group.vercel.app/og-image.png",
-            "url": "https://bharat-group.vercel.app",
+            "image": "https://bharatgroup.org/og-image.png",
+            "url": "https://bharatgroup.org",
             "telephone": "+91-771-3169531",
             "address": {
               "@type": "PostalAddress",

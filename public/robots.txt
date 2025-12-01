@@ -1,5 +1,5 @@
 # Robots.txt for Bharat Group
-# https://bharat-group.vercel.app/
+# https://bharatgroup.org/
 
 User-agent: *
 Allow: /
@@ -15,7 +15,7 @@ Disallow: /admin/
 Disallow: /*.json$
 
 # Sitemap
-Sitemap: https://bharat-group.vercel.app/sitemap.xml
+Sitemap: https://bharatgroup.org/sitemap.xml
 
 # Crawl-delay for politeness
 Crawl-delay: 1

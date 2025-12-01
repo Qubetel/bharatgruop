@@ -135,14 +135,14 @@ const Machines = () => {
         <title>Our Machinery - Agarbatti, Paper Plate, Paper Cup, Papad & More | Bharat Group</title>
         <meta name="description" content="Explore our range of industrial machinery including Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines, Papad Making Machines, Cattle Feed Machines, Pulverizer and more. Quality machines with easy payment options and timely delivery." />
         <meta name="keywords" content="buy agarbatti making machine, paper plate machine price, paper cup machine India, papad making machine, cattle feed machine, pulverizer machine, edge squaring machine, manual paper press, automatic machines" />
-        <link rel="canonical" href="https://bharat-group.vercel.app/machines" />
+        <link rel="canonical" href="https://bharatgroup.org/machines" />
 
         {/* Open Graph */}
         <meta property="og:title" content="Premium Industrial Machinery - Bharat Group" />
         <meta property="og:description" content="Agarbatti, Paper Plate, Paper Cup, Papad Making, Cattle Feed & Pulverizer Machines. High efficiency, durable build, fast production. Order now!" />
-        <meta property="og:url" content="https://bharat-group.vercel.app/machines" />
+        <meta property="og:url" content="https://bharatgroup.org/machines" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://bharat-group.vercel.app/og-image.png" />
+        <meta property="og:image" content="https://bharatgroup.org/og-image.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -159,13 +159,13 @@ const Machines = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://bharat-group.vercel.app/"
+                "item": "https://bharatgroup.org/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Machines",
-                "item": "https://bharat-group.vercel.app/machines"
+                "item": "https://bharatgroup.org/machines"
               }
             ]
           }

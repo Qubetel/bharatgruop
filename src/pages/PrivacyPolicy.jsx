@@ -46,12 +46,12 @@ const PrivacyPolicy = () => {
         <title>Privacy Policy - Bharat Group | Data Protection & Privacy</title>
         <meta name="description" content="Bharat Group Privacy Policy - Learn how we collect, use, store, and protect your personal information when you visit our website or purchase our products." />
         <meta name="keywords" content="Bharat Group privacy policy, data protection, customer privacy, personal information protection" />
-        <link rel="canonical" href="https://bharat-group.vercel.app/privacy-policy" />
+        <link rel="canonical" href="https://bharatgroup.org/privacy-policy" />
 
         {/* Open Graph */}
         <meta property="og:title" content="Privacy Policy - Bharat Group" />
         <meta property="og:description" content="Learn how we protect your personal information and data." />
-        <meta property="og:url" content="https://bharat-group.vercel.app/privacy-policy" />
+        <meta property="og:url" content="https://bharatgroup.org/privacy-policy" />
         <meta property="og:type" content="website" />
 
         {/* Breadcrumb Schema */}
@@ -64,13 +64,13 @@ const PrivacyPolicy = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://bharat-group.vercel.app/"
+                "item": "https://bharatgroup.org/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Privacy Policy",
-                "item": "https://bharat-group.vercel.app/privacy-policy"
+                "item": "https://bharatgroup.org/privacy-policy"
               }
             ]
           }

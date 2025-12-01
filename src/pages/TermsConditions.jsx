@@ -57,12 +57,12 @@ const TermsConditions = () => {
         <title>Terms & Conditions - Bharat Group | Purchase Terms</title>
         <meta name="description" content="Bharat Group Terms and Conditions - Read our terms for purchasing machinery, warranty, delivery, payments, and after-sales service." />
         <meta name="keywords" content="Bharat Group terms, purchase terms, machinery warranty, delivery terms, payment terms" />
-        <link rel="canonical" href="https://bharat-group.vercel.app/terms-conditions" />
+        <link rel="canonical" href="https://bharatgroup.org/terms-conditions" />
 
         {/* Open Graph */}
         <meta property="og:title" content="Terms & Conditions - Bharat Group" />
         <meta property="og:description" content="Read our terms for purchasing machinery, warranty, delivery and payments." />
-        <meta property="og:url" content="https://bharat-group.vercel.app/terms-conditions" />
+        <meta property="og:url" content="https://bharatgroup.org/terms-conditions" />
         <meta property="og:type" content="website" />
 
         {/* Breadcrumb Schema */}
@@ -75,13 +75,13 @@ const TermsConditions = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://bharat-group.vercel.app/"
+                "item": "https://bharatgroup.org/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Terms & Conditions",
-                "item": "https://bharat-group.vercel.app/terms-conditions"
+                "item": "https://bharatgroup.org/terms-conditions"
               }
             ]
           }
