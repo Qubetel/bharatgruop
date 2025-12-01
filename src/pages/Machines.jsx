@@ -132,22 +132,30 @@ const Machines = () => {
   return (
     <>
       <Helmet>
-        <title>Our Machinery - Agarbatti, Paper Plate, Paper Cup, Papad & More | Bharat Group</title>
-        <meta name="description" content="Explore our range of industrial machinery including Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines, Papad Making Machines, Cattle Feed Machines, Pulverizer and more. Quality machines with easy payment options and timely delivery." />
-        <meta name="keywords" content="buy agarbatti making machine, paper plate machine price, paper cup machine India, papad making machine, cattle feed machine, pulverizer machine, edge squaring machine, manual paper press, automatic machines" />
+        <title>Buy Agarbatti Making Machine | Paper Plate Machine | Paper Cup Machine Price India - Bharat Group</title>
+        <meta name="description" content="Buy Agarbatti Making Machine, Paper Plate Machine, Paper Cup Machine, Papad Machine, Cattle Feed Machine, Pulverizer at Best Price in India. 2-Year Warranty. Same Day Delivery. Free Installation. Call: 0771-3169531" />
+        <meta name="keywords" content="agarbatti making machine price, buy agarbatti machine online, automatic agarbatti machine, paper plate making machine price, paper plate machine cost, buy paper plate machine, paper cup machine price India, paper cup making machine cost, dona making machine price, papad making machine price, cattle feed machine price, pulverizer machine price, best agarbatti machine India, commercial paper plate machine, industrial machines for small business, low investment machines India, startup business machines" />
         <link rel="canonical" href="https://bharatgroup.org/machines" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-        {/* Open Graph */}
-        <meta property="og:title" content="Premium Industrial Machinery - Bharat Group" />
-        <meta property="og:description" content="Agarbatti, Paper Plate, Paper Cup, Papad Making, Cattle Feed & Pulverizer Machines. High efficiency, durable build, fast production. Order now!" />
-        <meta property="og:url" content="https://bharatgroup.org/machines" />
+        {/* Open Graph / Facebook / WhatsApp */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bharatgroup.org/machines" />
+        <meta property="og:title" content="Buy Agarbatti Machine, Paper Plate Machine at Best Price - Bharat Group" />
+        <meta property="og:description" content="Buy Industrial Machines at Best Price. Agarbatti Machine, Paper Plate Machine, Paper Cup Machine, Papad Machine. 2-Year Warranty. Same Day Delivery. Call: 0771-3169531" />
         <meta property="og:image" content="https://bharatgroup.org/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Bharat Group Industrial Machines - Agarbatti, Paper Plate, Paper Cup Machines" />
+        <meta property="og:site_name" content="Bharat Group" />
+        <meta property="og:locale" content="en_IN" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Industrial Machinery - Bharat Group" />
-        <meta name="twitter:description" content="Premium quality Agarbatti, Paper Plate, Paper Cup, Papad & more Making Machines." />
+        <meta name="twitter:site" content="@bharatgroup" />
+        <meta name="twitter:title" content="Buy Agarbatti Machine, Paper Plate Machine - Best Price India" />
+        <meta name="twitter:description" content="Industrial Machines at Best Price. 2-Year Warranty. Same Day Delivery. Call: 0771-3169531" />
+        <meta name="twitter:image" content="https://bharatgroup.org/og-image.png" />
 
         {/* Breadcrumb Schema */}
         <script type="application/ld+json">{`

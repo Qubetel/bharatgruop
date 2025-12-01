@@ -1,35 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <!-- Home Page -->
   <url>
     <loc>https://bharatgroup.org/</loc>
-    <lastmod>2025-11-27</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bharatgroup.org/og-image.png</image:loc>
+      <image:title>Bharat Group - Agarbatti Making Machine and Paper Plate Machine Manufacturer</image:title>
+      <image:caption>India's leading manufacturer of eco-friendly machinery since 2005</image:caption>
+    </image:image>
   </url>
 
   <!-- About Page -->
   <url>
     <loc>https://bharatgroup.org/about</loc>
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bharatgroup.org/og-image.png</image:loc>
+      <image:title>About Bharat Group - Eco-Friendly Machinery Manufacturer Since 2005</image:title>
+    </image:image>
   </url>
 
   <!-- Machines Page -->
   <url>
     <loc>https://bharatgroup.org/machines</loc>
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://bharatgroup.org/og-image.png</image:loc>
+      <image:title>Industrial Machines - Agarbatti, Paper Plate, Paper Cup, Dona Making Machines</image:title>
+      <image:caption>Buy industrial machines at best price with 2-year warranty</image:caption>
+    </image:image>
   </url>
 
   <!-- Contact Page -->
   <url>
     <loc>https://bharatgroup.org/contact</loc>
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -37,7 +52,7 @@
   <!-- Privacy Policy Page -->
   <url>
     <loc>https://bharatgroup.org/privacy-policy</loc>
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -45,7 +60,7 @@
   <!-- Terms & Conditions Page -->
   <url>
     <loc>https://bharatgroup.org/terms-conditions</loc>
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

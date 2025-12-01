@@ -26,22 +26,29 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Bharat Group - Eco-Friendly Machinery Manufacturer Since 2005</title>
-        <meta name="description" content="Learn about Bharat Group - Established in 2005, we are a leading manufacturer of eco-friendly machinery with 100+ employees. Manufacturing, wholesaling, and retailing agarbatti, paper plate, paper cup and dona making machines." />
-        <meta name="keywords" content="Bharat Group about, eco-friendly machinery company, agarbatti machine manufacturer, paper plate machine company, Indian machinery manufacturer, Raipur machinery" />
+        <title>About Bharat Group - India's #1 Agarbatti & Paper Plate Machine Manufacturer Since 2005</title>
+        <meta name="description" content="Bharat Group - India's leading manufacturer of Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines since 2005. 100+ employees, 500+ happy clients. Best Price. 2-Year Warranty. Raipur, Chhattisgarh. Call: 0771-3169531" />
+        <meta name="keywords" content="Bharat Group about, Bharat Group company, agarbatti machine manufacturer India, paper plate machine company, paper cup machine manufacturer, best machinery company India, Raipur machinery manufacturer, Chhattisgarh machinery, eco-friendly machinery company, industrial machine manufacturer India" />
         <link rel="canonical" href="https://bharatgroup.org/about" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-        {/* Open Graph */}
-        <meta property="og:title" content="About Bharat Group - Eco-Friendly Machinery Manufacturer" />
-        <meta property="og:description" content="Established in 2005 with 100+ employees. Manufacturing agarbatti, paper plate, paper cup and dona making machines." />
-        <meta property="og:url" content="https://bharatgroup.org/about" />
+        {/* Open Graph / Facebook / WhatsApp */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bharatgroup.org/about" />
+        <meta property="og:title" content="About Bharat Group - India's #1 Machinery Manufacturer Since 2005" />
+        <meta property="og:description" content="100+ employees, 500+ happy clients. Best Agarbatti Machine, Paper Plate Machine Manufacturer. 2-Year Warranty. Call: 0771-3169531" />
         <meta property="og:image" content="https://bharatgroup.org/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Bharat Group" />
+        <meta property="og:locale" content="en_IN" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@bharatgroup" />
         <meta name="twitter:title" content="About Bharat Group - Machinery Manufacturer Since 2005" />
-        <meta name="twitter:description" content="100+ employees, 500+ clients. Leading eco-friendly machinery manufacturer in India." />
+        <meta name="twitter:description" content="100+ employees, 500+ clients. India's #1 Agarbatti & Paper Plate Machine Manufacturer." />
+        <meta name="twitter:image" content="https://bharatgroup.org/og-image.png" />
 
         {/* Breadcrumb Schema */}
         <script type="application/ld+json">{`

@@ -215,23 +215,31 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Bharat Group - Leading Manufacturer of Eco-Friendly Machinery | Agarbatti, Paper Plate & Cup Machines</title>
-        <meta name="description" content="Bharat Group - Leading manufacturer of eco-friendly machinery since 2005. Specializing in Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines & Dona Making Machines. 100+ employees, 500+ satisfied clients across India." />
-        <meta name="keywords" content="agarbatti making machine, paper plate machine, paper cup machine, dona making machine, eco-friendly machinery, disposable product machines, Bharat Group, Raipur, Chhattisgarh, manufacturing machines India" />
+        <title>Bharat Group - Agarbatti Making Machine | Paper Plate Machine | Paper Cup Machine Manufacturer India</title>
+        <meta name="description" content="Buy Agarbatti Making Machine, Paper Plate Machine, Paper Cup Machine, Dona Machine, Papad Machine at Best Price. Bharat Group - India's #1 Machinery Manufacturer Since 2005. 2-Year Warranty. Same Day Delivery. Call: 0771-3169531" />
+        <meta name="keywords" content="agarbatti making machine, agarbatti machine price, buy agarbatti machine, automatic agarbatti machine, paper plate making machine, paper plate machine price, paper plate machine India, paper cup making machine, paper cup machine price, dona making machine, dona machine price, papad making machine, cattle feed machine, pulverizer machine, best agarbatti machine, commercial paper plate machine, industrial paper cup machine, small business machines India, manufacturing machines, startup machines India, low investment business machines, Bharat Group, Raipur, Chhattisgarh" />
         <link rel="canonical" href="https://bharatgroup.org/" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-        {/* Open Graph */}
-        <meta property="og:title" content="Bharat Group - Leading Manufacturer of Eco-Friendly Machinery" />
-        <meta property="og:description" content="Leading manufacturer of eco-friendly machinery since 2005. Agarbatti, Paper Plate, Paper Cup & Dona Making Machines. 500+ satisfied clients across India." />
-        <meta property="og:url" content="https://bharatgroup.org/" />
+        {/* Open Graph / Facebook / WhatsApp */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bharatgroup.org/" />
+        <meta property="og:title" content="Bharat Group - Buy Agarbatti & Paper Plate Machine at Best Price India" />
+        <meta property="og:description" content="India's #1 Machinery Manufacturer. Buy Agarbatti Machine, Paper Plate Machine, Paper Cup Machine. 2-Year Warranty. Same Day Delivery. 500+ Happy Clients. Call: 0771-3169531" />
         <meta property="og:image" content="https://bharatgroup.org/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Bharat Group - Agarbatti Making Machine and Paper Plate Machine Manufacturer India" />
+        <meta property="og:site_name" content="Bharat Group" />
+        <meta property="og:locale" content="en_IN" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Bharat Group - Eco-Friendly Machinery Manufacturer" />
-        <meta name="twitter:description" content="Leading manufacturer of Agarbatti, Paper Plate, Paper Cup & Dona Making Machines since 2005." />
+        <meta name="twitter:site" content="@bharatgroup" />
+        <meta name="twitter:title" content="Bharat Group - Agarbatti & Paper Plate Machine Manufacturer India" />
+        <meta name="twitter:description" content="Buy Agarbatti Machine, Paper Plate Machine, Paper Cup Machine at Best Price. 2-Year Warranty. Same Day Delivery. Call: 0771-3169531" />
         <meta name="twitter:image" content="https://bharatgroup.org/og-image.png" />
+        <meta name="twitter:image:alt" content="Bharat Group - Eco-Friendly Machinery Manufacturer" />
 
         {/* Structured Data - Organization */}
         <script type="application/ld+json">{`
@@ -239,10 +247,13 @@ const Home = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Bharat Group",
+            "alternateName": ["Bharat Group India", "Bharat Group Raipur", "Bharat Group Machines"],
             "url": "https://bharatgroup.org",
             "logo": "https://bharatgroup.org/og-image.png",
-            "description": "Leading manufacturer of eco-friendly machinery since 2005",
+            "description": "India's leading manufacturer of Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines since 2005",
             "foundingDate": "2005",
+            "telephone": "+91-771-3169531",
+            "email": "info@bharatgroup.org",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Office No. 207, 2nd Floor, Wallfort Zone, Fafadih",
@@ -251,22 +262,78 @@ const Home = () => {
               "postalCode": "492001",
               "addressCountry": "IN"
             },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+91-771-3169531",
-              "contactType": "sales"
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "21.258007",
+              "longitude": "81.636703"
+            },
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+91-771-3169531",
+                "contactType": "sales",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi"]
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/bharatgroup",
+              "https://www.instagram.com/bharatgroup",
+              "https://twitter.com/bharatgroup"
+            ]
+          }
+        `}</script>
+
+        {/* Structured Data - LocalBusiness */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Bharat Group",
+            "image": "https://bharatgroup.org/og-image.png",
+            "url": "https://bharatgroup.org",
+            "telephone": "+91-771-3169531",
+            "priceRange": "₹₹",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Office No. 207, 2nd Floor, Wallfort Zone, Fafadih",
+              "addressLocality": "Raipur",
+              "addressRegion": "Chhattisgarh",
+              "postalCode": "492001",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "21.258007",
+              "longitude": "81.636703"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "500"
             }
           }
         `}</script>
 
-        {/* Structured Data - WebSite with SearchAction */}
+        {/* Structured Data - WebSite */}
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Bharat Group",
             "url": "https://bharatgroup.org",
-            "description": "Leading manufacturer of eco-friendly machinery - Agarbatti, Paper Plate, Paper Cup & Dona Making Machines"
+            "description": "India's #1 manufacturer of Agarbatti Making Machines, Paper Plate Machines, Paper Cup Machines and more industrial machinery",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://bharatgroup.org/machines?search={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
           }
         `}</script>
       </Helmet>

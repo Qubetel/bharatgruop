@@ -120,22 +120,29 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - Bharat Group | Get in Touch for Eco-Friendly Machinery</title>
-        <meta name="description" content="Contact Bharat Group for quality eco-friendly machinery. Located in Raipur, Chhattisgarh. Phone: 0771-3169531. Office: Wallfort Zone, Fafadih. GSTIN: 22CYHPP7549G1Z4" />
-        <meta name="keywords" content="contact Bharat Group, machinery dealer Raipur, agarbatti machine dealer, paper plate machine contact, Chhattisgarh machinery supplier" />
+        <title>Contact Bharat Group - Buy Agarbatti Machine, Paper Plate Machine | Call: 0771-3169531</title>
+        <meta name="description" content="Contact Bharat Group to buy Agarbatti Making Machine, Paper Plate Machine, Paper Cup Machine at Best Price. Call: 0771-3169531. Raipur, Chhattisgarh. 2-Year Warranty. Same Day Delivery. Free Installation & Training." />
+        <meta name="keywords" content="contact Bharat Group, buy agarbatti machine, agarbatti machine dealer Raipur, paper plate machine dealer, paper cup machine contact, machinery supplier Chhattisgarh, Bharat Group phone number, Bharat Group address, machinery dealer India, best machine price inquiry" />
         <link rel="canonical" href="https://bharatgroup.org/contact" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-        {/* Open Graph */}
-        <meta property="og:title" content="Contact Bharat Group - Eco-Friendly Machinery" />
-        <meta property="og:description" content="Get in touch for Agarbatti, Paper Plate, Paper Cup & Dona Making Machines. Phone: 0771-3169531, Raipur, Chhattisgarh." />
-        <meta property="og:url" content="https://bharatgroup.org/contact" />
+        {/* Open Graph / Facebook / WhatsApp */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bharatgroup.org/contact" />
+        <meta property="og:title" content="Contact Bharat Group - Buy Agarbatti & Paper Plate Machine | Call: 0771-3169531" />
+        <meta property="og:description" content="Buy Agarbatti Machine, Paper Plate Machine at Best Price. Call: 0771-3169531. 2-Year Warranty. Same Day Delivery. Raipur, Chhattisgarh." />
         <meta property="og:image" content="https://bharatgroup.org/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Bharat Group" />
+        <meta property="og:locale" content="en_IN" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Bharat Group" />
-        <meta name="twitter:description" content="Get in touch for eco-friendly machinery. Phone: 0771-3169531" />
+        <meta name="twitter:site" content="@bharatgroup" />
+        <meta name="twitter:title" content="Contact Bharat Group - Call: 0771-3169531" />
+        <meta name="twitter:description" content="Buy Agarbatti Machine, Paper Plate Machine. Best Price. 2-Year Warranty. Same Day Delivery." />
+        <meta name="twitter:image" content="https://bharatgroup.org/og-image.png" />
 
         {/* Breadcrumb Schema */}
         <script type="application/ld+json">{`

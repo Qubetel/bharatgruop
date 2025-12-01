@@ -1,6 +1,7 @@
-# Robots.txt for Bharat Group
-# https://bharatgroup.org/
+# Bharat Group - Robots.txt
+# https://bharatgroup.org
 
+# Allow all search engines
 User-agent: *
 Allow: /
 Allow: /about
@@ -9,13 +10,11 @@ Allow: /contact
 Allow: /privacy-policy
 Allow: /terms-conditions
 
-# Disallow admin and api paths
+# Disallow specific paths
 Disallow: /api/
 Disallow: /admin/
 Disallow: /*.json$
-
-# Sitemap
-Sitemap: https://bharatgroup.org/sitemap.xml
+Disallow: /config.php
 
 # Crawl-delay for politeness
 Crawl-delay: 1
@@ -25,7 +24,45 @@ User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
+# Google Images
+User-agent: Googlebot-Image
+Allow: /
+
 # Bing specific
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Facebook crawler
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter crawler
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn crawler
+User-agent: LinkedInBot
+Allow: /
+
+# WhatsApp crawler
+User-agent: WhatsApp
+Allow: /
+
+# Pinterest crawler
+User-agent: Pinterest
+Allow: /
+
+# Sitemap location
+Sitemap: https://bharatgroup.org/sitemap.xml
+
+# Host directive
+Host: https://bharatgroup.org
