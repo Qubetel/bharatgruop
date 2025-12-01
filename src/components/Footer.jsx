@@ -91,18 +91,53 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-green-500 mt-1" />
-                <span className="text-gray-400">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Office+No.+207,+2nd+Floor,+Wallfort+Zone,+Fafadih,+Raipur+492001+Chhattisgarh+India"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-500 hover:text-green-400 transition-colors mt-1"
+                  aria-label="Open location in Google Maps"
+                >
+                  <MapPin className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Office+No.+207,+2nd+Floor,+Wallfort+Zone,+Fafadih,+Raipur+492001+Chhattisgarh+India"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-green-500 transition-colors"
+                >
                   Office No. 207, 2nd Floor, Wallfort Zone, Fafadih, Raipur - 492001 (C.G.)
-                </span>
+                </a>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-green-500" />
-                <span className="text-gray-400">0771-3169531</span>
+                <a
+                  href="tel:+917713169531"
+                  className="text-green-500 hover:text-green-400 transition-colors"
+                  aria-label="Call us"
+                >
+                  <Phone className="w-5 h-5" />
+                </a>
+                <a
+                  href="tel:+917713169531"
+                  className="text-gray-400 hover:text-green-500 transition-colors"
+                >
+                  0771-3169531
+                </a>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-green-500" />
-                <span className="text-gray-400">info@bharatgroup.org</span>
+                <a
+                  href="mailto:info@bharatgroup.org"
+                  className="text-green-500 hover:text-green-400 transition-colors"
+                  aria-label="Send us an email"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+                <a
+                  href="mailto:info@bharatgroup.org"
+                  className="text-gray-400 hover:text-green-500 transition-colors"
+                >
+                  info@bharatgroup.org
+                </a>
               </li>
             </ul>
           </div>
