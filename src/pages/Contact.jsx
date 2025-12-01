@@ -200,7 +200,7 @@ const Contact = () => {
                 "name": "How long does delivery take?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Typically 7-15 business days depending on your location and machine availability."
+                  "text": "Typically same day or maximum one day depending on your location and machine availability."
                 }
               }
             ]
@@ -491,7 +491,7 @@ const Contact = () => {
               },
               {
                 q: 'How long does delivery take?',
-                a: 'Typically 7-15 business days depending on your location and machine availability.',
+                a: 'Typically same day or maximum one day depending on your location and machine availability.',
               },
             ].map((faq, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
