@@ -55,8 +55,8 @@ const Contact = () => {
     setSubmitStatus({ type: '', message: '' });
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'https://bharatgroup.org/api';
-      const response = await fetch(`${API_URL}/contact`, {
+      const API_URL = import.meta.env.VITE_API_URL || 'https://bharatgroup.org';
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
