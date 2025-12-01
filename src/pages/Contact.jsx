@@ -86,6 +86,8 @@ const Contact = () => {
       details: ['Office No.: 207, 2nd Floor', 'Wallfort Zone, Fafadih', 'RAIPUR - 492001 (C.G.)'],
       color: 'text-red-600',
       bg: 'bg-red-100',
+      link: 'https://maps.google.com/maps?q=21.258007,81.636703&hl=en&z=17',
+      external: true,
     },
     {
       icon: Phone,
@@ -93,6 +95,7 @@ const Contact = () => {
       details: ['0771-3169531'],
       color: 'text-green-600',
       bg: 'bg-green-100',
+      link: 'tel:+917713169531',
     },
     {
       icon: Mail,
@@ -100,6 +103,7 @@ const Contact = () => {
       details: ['info@bharatgroup.org', 'sales@bharatgroup.org'],
       color: 'text-blue-600',
       bg: 'bg-blue-100',
+      link: 'mailto:info@bharatgroup.org',
     },
     {
       icon: FileText,
@@ -287,20 +291,44 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {contactInfo.map((info, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className={`inline-flex items-center justify-center w-14 h-14 ${info.bg} rounded-lg mb-4`}>
-                    <info.icon className={`w-7 h-7 ${info.color}`} />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{info.title}</h3>
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-600 mb-1">
-                      {detail}
-                    </p>
-                  ))}
-                </motion.div>
+                {info.link ? (
+                  <a
+                    href={info.link}
+                    target={info.external ? '_blank' : '_self'}
+                    rel={info.external ? 'noopener noreferrer' : ''}
+                    className="block"
+                  >
+                    <motion.div
+                      whileHover={{ y: -5 }}
+                      className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                    >
+                      <div className={`inline-flex items-center justify-center w-14 h-14 ${info.bg} rounded-lg mb-4`}>
+                        <info.icon className={`w-7 h-7 ${info.color}`} />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-800 mb-3">{info.title}</h3>
+                      {info.details.map((detail, idx) => (
+                        <p key={idx} className="text-gray-600 mb-1 hover:text-green-600 transition-colors">
+                          {detail}
+                        </p>
+                      ))}
+                    </motion.div>
+                  </a>
+                ) : (
+                  <motion.div
+                    whileHover={{ y: -5 }}
+                    className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className={`inline-flex items-center justify-center w-14 h-14 ${info.bg} rounded-lg mb-4`}>
+                      <info.icon className={`w-7 h-7 ${info.color}`} />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">{info.title}</h3>
+                    {info.details.map((detail, idx) => (
+                      <p key={idx} className="text-gray-600 mb-1">
+                        {detail}
+                      </p>
+                    ))}
+                  </motion.div>
+                )}
               </AnimatedSection>
             ))}
           </div>

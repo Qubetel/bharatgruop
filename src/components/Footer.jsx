@@ -92,7 +92,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Office+No.+207,+2nd+Floor,+Wallfort+Zone,+Fafadih,+Raipur+492001+Chhattisgarh+India"
+                  href="https://maps.google.com/maps?q=21.258007,81.636703&hl=en&z=17"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-green-500 hover:text-green-400 transition-colors mt-1"
@@ -101,7 +101,7 @@ const Footer = () => {
                   <MapPin className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Office+No.+207,+2nd+Floor,+Wallfort+Zone,+Fafadih,+Raipur+492001+Chhattisgarh+India"
+                  href="https://maps.google.com/maps?q=21.258007,81.636703&hl=en&z=17"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-green-500 transition-colors"
