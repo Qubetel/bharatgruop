@@ -176,7 +176,7 @@ const Contact = () => {
                 "name": "What is the warranty period for your machines?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "All our machines come with a 1-year warranty covering manufacturing defects and parts replacement."
+                  "text": "All our machines come with a 2-year warranty covering manufacturing defects and parts replacement."
                 }
               },
               {
@@ -192,7 +192,7 @@ const Contact = () => {
                 "name": "What are the payment options available?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "We offer flexible payment options including EMI, bank transfers, and various digital payment methods."
+                  "text": "We offer flexible payment options including bank transfers and various digital payment methods."
                 }
               },
               {
@@ -479,7 +479,7 @@ const Contact = () => {
             {[
               {
                 q: 'What is the warranty period for your machines?',
-                a: 'All our machines come with a 1-year warranty covering manufacturing defects and parts replacement.',
+                a: 'All our machines come with a 2-year warranty covering manufacturing defects and parts replacement.',
               },
               {
                 q: 'Do you provide installation and training?',
@@ -487,7 +487,7 @@ const Contact = () => {
               },
               {
                 q: 'What are the payment options available?',
-                a: 'We offer flexible payment options including EMI, bank transfers, and various digital payment methods.',
+                a: 'We offer flexible payment options including bank transfers and various digital payment methods.',
               },
               {
                 q: 'How long does delivery take?',
