@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, MapPin, Clock, Send, Facebook, Twitter, Instagram, Linkedin, FileText } from 'lucide-react';
 import logoSign from '../assets/bharat-group/logo-sign.png';
 
-const AnimatedSection = ({ children, delay = 0 }) => {
+const AnimatedSection = ({ children, delay = 0, className = '' }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -16,6 +16,7 @@ const AnimatedSection = ({ children, delay = 0 }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay }}
+      className={className}
     >
       {children}
     </motion.div>
@@ -92,10 +93,14 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone Number',
-      details: ['0771-3169531'],
+      details: [
+        { text: '0771-3169531', link: 'tel:+917713169531' },
+        { text: '7880168891', link: 'tel:+917880168891' },
+        { text: '7880168896', link: 'tel:+917880168896' },
+      ],
       color: 'text-green-600',
       bg: 'bg-green-100',
-      link: 'tel:+917713169531',
+      isPhoneList: true,
     },
     {
       icon: Mail,
@@ -290,17 +295,36 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {contactInfo.map((info, index) => (
-              <AnimatedSection key={index} delay={index * 0.1}>
-                {info.link ? (
+              <AnimatedSection key={index} delay={index * 0.1} className="h-full">
+                {info.isPhoneList ? (
+                  <motion.div
+                    whileHover={{ y: -5 }}
+                    className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full"
+                  >
+                    <div className={`inline-flex items-center justify-center w-14 h-14 ${info.bg} rounded-lg mb-4`}>
+                      <info.icon className={`w-7 h-7 ${info.color}`} />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">{info.title}</h3>
+                    {info.details.map((detail, idx) => (
+                      <a
+                        key={idx}
+                        href={detail.link}
+                        className="block text-gray-600 mb-1 hover:text-green-600 transition-colors cursor-pointer"
+                      >
+                        {detail.text}
+                      </a>
+                    ))}
+                  </motion.div>
+                ) : info.link ? (
                   <a
                     href={info.link}
                     target={info.external ? '_blank' : '_self'}
                     rel={info.external ? 'noopener noreferrer' : ''}
-                    className="block"
+                    className="block h-full"
                   >
                     <motion.div
                       whileHover={{ y: -5 }}
-                      className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                      className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer h-full"
                     >
                       <div className={`inline-flex items-center justify-center w-14 h-14 ${info.bg} rounded-lg mb-4`}>
                         <info.icon className={`w-7 h-7 ${info.color}`} />
@@ -316,7 +340,7 @@ const Contact = () => {
                 ) : (
                   <motion.div
                     whileHover={{ y: -5 }}
-                    className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full"
                   >
                     <div className={`inline-flex items-center justify-center w-14 h-14 ${info.bg} rounded-lg mb-4`}>
                       <info.icon className={`w-7 h-7 ${info.color}`} />

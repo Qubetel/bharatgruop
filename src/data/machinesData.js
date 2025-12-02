@@ -1,5 +1,9 @@
 // Product Images
 import agarbattiMachine from '../assets/bharat-group/Automatic_Agarbatti-Making-Machine - 1.jpg';
+import agarbattiMachine2 from '../assets/bharat-group/WhatsApp Image 2025-12-02 at 10.17.50 PM.jpeg';
+import agarbattiMachine3 from '../assets/bharat-group/WhatsApp Image 2025-12-02 at 10.17.50 PM (1).jpeg';
+import agarbattiMachine4 from '../assets/bharat-group/WhatsApp Image 2025-12-02 at 10.17.50 PM (2).jpeg';
+import agarbattiMachine5 from '../assets/bharat-group/WhatsApp Image 2025-12-02 at 10.17.50 PM (3).jpeg';
 import papadMachine from '../assets/bharat-group/Automatic Pampad MAchine - 2.jpg';
 import paperCupMachine from '../assets/bharat-group/Automatic Paper Cup Machine - 3.jpg';
 import cattleFeedMachine from '../assets/bharat-group/Cattle Feed Machine - 4.jpg';
@@ -27,6 +31,7 @@ export const machines = [
     category: 'agarbatti',
     name: 'Automatic Agarbatti Making Machine',
     image: agarbattiMachine,
+    images: [agarbattiMachine2, agarbattiMachine3, agarbattiMachine4, agarbattiMachine5],
     description: 'High-speed automatic agarbatti manufacturing with precision engineering.',
     keyFeatures: [
       {

@@ -108,6 +108,31 @@ const StackingSection = ({ children, className }) => {
   );
 };
 
+// Rotating Image Component for products with multiple images
+const RotatingImage = ({ images, alt, className }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [images]);
+
+  if (!images || images.length === 0) return null;
+
+  return (
+    <img
+      src={images[currentIndex]}
+      alt={alt}
+      className={className}
+    />
+  );
+};
+
 const Home = () => {
   const [windowWidth, setWindowWidth] = useState(() => {
     // Initialize with current window width
@@ -140,6 +165,7 @@ const Home = () => {
     title: machine.name,
     description: machine.description,
     image: machine.image,
+    images: machine.images || null,
     features: machine.keyFeatures.slice(0, 3).map(f => f.title),
     id: machine.id
   }));
@@ -646,13 +672,21 @@ const Home = () => {
                     className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col product-carousel-card"
                   >
                     <div className="relative h-48 overflow-hidden group flex-shrink-0 bg-gray-100">
-                      <motion.img
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.5 }}
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full h-full object-contain p-2"
-                      />
+                      {product.images ? (
+                        <RotatingImage
+                          images={product.images}
+                          alt={product.title}
+                          className="w-full h-full object-contain p-2"
+                        />
+                      ) : (
+                        <motion.img
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.5 }}
+                          src={product.image}
+                          alt={product.title}
+                          className="w-full h-full object-contain p-2"
+                        />
+                      )}
                       <motion.div
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}

@@ -109,20 +109,34 @@ const Footer = () => {
                   Office No. 207, 2nd Floor, Wallfort Zone, Fafadih, Raipur - 492001 (C.G.)
                 </a>
               </li>
-              <li className="flex items-center space-x-3">
+              <li className="flex items-start space-x-3">
                 <a
                   href="tel:+917713169531"
-                  className="text-green-500 hover:text-green-400 transition-colors"
+                  className="text-green-500 hover:text-green-400 transition-colors mt-1"
                   aria-label="Call us"
                 >
                   <Phone className="w-5 h-5" />
                 </a>
-                <a
-                  href="tel:+917713169531"
-                  className="text-gray-400 hover:text-green-500 transition-colors"
-                >
-                  0771-3169531
-                </a>
+                <div className="flex flex-col">
+                  <a
+                    href="tel:+917713169531"
+                    className="text-gray-400 hover:text-green-500 transition-colors"
+                  >
+                    0771-3169531
+                  </a>
+                  <a
+                    href="tel:+917880168891"
+                    className="text-gray-400 hover:text-green-500 transition-colors"
+                  >
+                    7880168891
+                  </a>
+                  <a
+                    href="tel:+917880168896"
+                    className="text-gray-400 hover:text-green-500 transition-colors"
+                  >
+                    7880168896
+                  </a>
+                </div>
               </li>
               <li className="flex items-center space-x-3">
                 <a

@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, memo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle, Zap, Shield, Clock, Award, DollarSign, X, ChevronRight } from 'lucide-react';
@@ -24,6 +24,31 @@ const AnimatedSection = ({ children, delay = 0 }) => {
     </motion.div>
   );
 };
+
+// Rotating Image Component for products with multiple images
+const RotatingImage = memo(({ images, alt, className }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [images]);
+
+  if (!images || images.length === 0) return null;
+
+  return (
+    <img
+      src={images[currentIndex]}
+      alt={alt}
+      className={className}
+    />
+  );
+});
 
 // Product Detail Modal Component
 const ProductModal = ({ machine, onClose }) => {
@@ -414,11 +439,19 @@ const Machines = () => {
                     onClick={() => setSelectedMachine(machine)}
                   >
                     <div className="relative h-48 overflow-hidden bg-gray-100">
-                      <img
-                        src={machine.image}
-                        alt={machine.name}
-                        className="w-full h-full object-contain p-2 transition-transform duration-500 hover:scale-105"
-                      />
+                      {machine.images ? (
+                        <RotatingImage
+                          images={machine.images}
+                          alt={machine.name}
+                          className="w-full h-full object-contain p-2"
+                        />
+                      ) : (
+                        <img
+                          src={machine.image}
+                          alt={machine.name}
+                          className="w-full h-full object-contain p-2 transition-transform duration-500 hover:scale-105"
+                        />
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                         <span className="text-white font-semibold text-sm bg-green-600 px-4 py-2 rounded-full">
                           View Details
