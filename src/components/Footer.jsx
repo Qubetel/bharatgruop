@@ -160,9 +160,20 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Bharat Group. All rights reserved.
-            </p>
+            <div className="text-gray-400 text-sm mb-4 md:mb-0 text-center md:text-left">
+              <p>&copy; {new Date().getFullYear()} Bharat Group. All rights reserved.</p>
+              <p className="mt-1">
+                Developed & Designed by{' '}
+                <a
+                  href="https://qubetel.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-500 hover:text-green-400 transition-colors"
+                >
+                  Qubetel
+                </a>
+              </p>
+            </div>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy-policy" className="text-gray-400 hover:text-green-500 transition-colors">
                 Privacy Policy
