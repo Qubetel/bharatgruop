@@ -74,11 +74,19 @@ const ProductModal = ({ machine, onClose }) => {
           {/* Modal Header */}
           <div className="relative">
             <div className="h-64 md:h-80 overflow-hidden bg-gray-100">
-              <img
-                src={machine.image}
-                alt={machine.name}
-                className="w-full h-full object-contain p-4"
-              />
+              {machine.images ? (
+                <RotatingImage
+                  images={machine.images}
+                  alt={machine.name}
+                  className="w-full h-full object-contain p-4"
+                />
+              ) : (
+                <img
+                  src={machine.image}
+                  alt={machine.name}
+                  className="w-full h-full object-contain p-4"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             </div>
             <button
